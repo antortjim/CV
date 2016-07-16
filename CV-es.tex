@@ -30,8 +30,7 @@
 \usepackage{amsmath,amsfonts,amsthm}     % Math packages
 \usepackage{graphicx}                    % Enable pdflatex
 \usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
-\usepackage{geometry}
-%	\textheight=700px                    % Saving trees ;-)
+\usepackage[margin=1in]{geometry}        % Decrease margins to 1 inch to make CV wider%	\textheight=700px                    % Saving trees ;-)
 \usepackage{url}
 
 \usepackage[hidelinks]{hyperref}
@@ -52,6 +51,25 @@
 \newcommand\T{\textrm{T}}  % "true"
 \newcommand\F{\textrm{F}}  % "false"
 \usepackage{xspace}
+
+\usepackage{fancyhdr}
+ 
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textbf{Antonio Ortega Jiménez}}
+\rhead{\textit{Curriculum Vitae}}
+\rfoot{Page \thepage\xspace of 3}
+
+\fancypagestyle{plain}{%
+  \fancyhf{}% Clear header/footer
+  \fancyfoot[OR]{Page \thepage\xspace of 3}%
+  \fancyfoot[EL]{Page \thepage\xspace of 3}%
+  \renewcommand{\headrulewidth}{0pt}%
+}
+
+
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist  %change the margins as given by arguments
 
 %% Font usage
 %%% ------------------------------------------------------------
@@ -101,7 +119,7 @@
 			\parbox{6em}{%
 			\hfill\color{White}#2}} \par  % Duration
 		\noindent \textit{#3} \par        % School
-		\noindent\hangindent=1em\hangafter=0 \small #4 % Description
+		\noindent\hangindent=1em\hangafter=0 \small \begin{changemargin}{2em}{3cm}#4 \end{changemargin} % Description
 		\normalsize \par}
 
 \newcommand{\AwardEntry}[4]{
@@ -110,7 +128,7 @@
 			\parbox{3em}{%
 			\hfill\color{White}#2}} \par  % Duration
 		\noindent \textit{#3} \par        % School
-		\noindent\hangindent=1em\hangafter=0 \small #4 % Description
+		\noindent\hangindent=1em\hangafter=0 \small \begin{changemargin}{2em}{3cm}#4 \end{changemargin} % Description
 		\normalsize \par}
 		
 		
@@ -206,34 +224,7 @@
   \textbf{LinkedIn}: \href{http://www.linkedin.com/in/antortjim}{linkedin.com/in/antortjim} \\
    \textbf{SO careers}:\\
    \href{http://careers.stackoverflow.com/antortjim}{careers.stackoverflow.com/antortjim} \\
-
 \end{minipage}
-
-%%% Awards
-%%% ------------------------------------------------------------
-\NewPart{Distinciones}{}
-
-\AwardEntry{Premio Extraordinario de Bachillerato}{2012}{Junta de Andalucía}{Los dos mejores estudiantes de Bachillerato de la provincia recibieron este premio.}
-\sepspace
-
-\AwardEntry{Premio Paco Anillo por la Provincia de Huelva}{2008}{Asociación Andaluza para la Educación Matemática THALES}{Un premio otorgado en cada provincia a la propuesta de solución más original \\a un problema de la Olimpiada Matemática THALES celebrada el mismo año.}
-
-%%% Computational Skills
-%%% ------------------------------------------------------------
-\NewPart{Conocimientos informáticos}
-
-\SkillsEntry{Aprendizaje}{Redes neuronales, Máquinas de soporte vectorial, K-means}
-\SkillsEntry{automático}{Análisis de componentes principales, Regularización}
-\sepspace
-
-\SkillsEntry{Bioinformática}{Microarrays, RNA-seq, ChIP-seq, Análisis de secuencias,}
-\SkillsEntry{}{Filogenia, Modelado de sistemas, Redes génicas}
-\sepspace
-
-\SkillsEntry{Programación}{R \& Bioconductor, Octave/MATLAB, Python, HTML, CSS}
-\sepspace
-
-\SkillsEntry{Tecnologías}{Linux, Bash, Vim, Latex, Arduino}
 
 %%% Education
 %%% ------------------------------------------------------------
@@ -244,7 +235,53 @@
 
 \EducationEntry{Grado en Bioquímica}{2012-2016}{Universidad de Sevilla}{\textbf{GPA}: 2.57/4.0. \textbf{Media}: 8.43/10 \\
   %\footnote{Computed as $1 + \frac{\mbox{10 based score} - 5}{5} \times 3 $}\\
-  Matrícula de Honor en Estadística, Biosíntesis de Macromoléculas, \\Genética Humana y Bioinformática y Análisis Genómico.}
+  Matrícula de Honor en Estadística, Biosíntesis de Macromoléculas, Genética Humana y Bioinformática y Análisis Genómico.}
+\sepspace
+  
+\EducationEntry{Bachillerato en Ciencias de la Salud}{2010-2012}{I.E.S Alto Conquero}{\textbf{Media}: 9.1/10}
+
+
+%%% Awards
+%%% ------------------------------------------------------------
+\NewPart{Distinciones}{}
+
+\AwardEntry{Premio Extraordinario de Bachillerato}{2012}{Junta de Andalucía}{Los dos mejores estudiantes de Bachillerato de la provincia recibieron este premio.}
+\sepspace
+
+\AwardEntry{Premio Paco Anillo por la Provincia de Huelva}{2008}{Asociación Andaluza para la Educación Matemática THALES}{Un premio otorgado en cada provincia a la propuesta de solución más original a un problema de la Olimpiada Matemática THALES celebrada el mismo año.}
+
+
+  
+%%% Computational Skills
+%%% ------------------------------------------------------------
+\NewPart{Conocimientos informáticos}
+
+\SkillsEntry{Aprendizaje}{Redes neuronales, Máquinas de soporte vectorial, K-means}
+\SkillsEntry{automático}{Análisis de componentes principales, Regularización}
+\sepspace
+
+\SkillsEntry{Métodos}{Microarrays, RNA-seq, ChIP-seq, Análisis de secuencias,}
+\SkillsEntry{bioinformáticos}{Filogenia, Modelado de sistemas, Redes génicas}
+\sepspace
+
+
+\SkillsEntry{Software}{Protocolo Tuxedo, IGV, GATK, COPASI,}
+\SkillsEntry{bioinformático}{Cytoscape, CellDesigner, Scipio}
+
+\SkillsEntry{Programación}{R \& Bioconductor, Octave/MATLAB, Python, HTML, CSS}
+\sepspace
+
+\SkillsEntry{Tecnologías}{Linux, Bash, Vim, Latex, Arduino, GitHub, Inkscape, Sphinx}
+
+
+%%% Projects
+%%% ------------------------------------------------------------
+\NewPart{Proyectos de investigación (\textit{wet lab})}{}
+
+\EducationEntry{Caracterización del promotor del gen \textit{sigE}}{2014-2015}{CIC Cartuja - CSIC}{Colaboré con el grupo de los doctores Muro y Vioque en la caracterización de la  expresión del promotor asociado al gen cianobacteriano \textit{sigE}.}
+
+\EducationEntry{Caracterización de All1873}{2015-2016}{CIC Cartuja - CSIC}{Realicé mi Trabajo de Fin de Grado trabajando en la sobreexpresión heteróloga en \textit{E. coli} de la proteína All1873, una proteína de función desconocida cuyo gen se encuentra codificado en el genoma de \textit{Nostoc PCC7120}.}
+  
   
 %%% Volunteering
 %%% ------------------------------------------------------------
@@ -254,14 +291,7 @@
 \VolunteeringEntry{}{impartidos en el grado en Bioquímica.}
 
   
-%%% Projects
-%%% ------------------------------------------------------------
-\NewPart{Proyectos de investigación (\textit{wet lab})}{}
 
-\EducationEntry{Caracterización del promotor del gen \textit{sigE}}{2014-2015}{CIC Cartuja - CSIC}{Colaboré con el grupo de los doctores Muro y Vioque en la caracterización de la \\ expresión del promotor asociado al gen cianobacteriano \textit{sigE}.}
-
-\EducationEntry{Caracterización de All1873}{2015-2016}{CIC Cartuja - CSIC}{Realicé mi Trabajo de Fin de Grado trabajando en la sobreexpresión heteróloga \\en \textit{E. coli} de la proteína All1873, una proteína de función desconocida cuyo gen \\se encuentra codificado en el genoma de \textit{Nostoc PCC7120}.}
-  
   
 
 

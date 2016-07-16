@@ -30,7 +30,7 @@
 \usepackage{amsmath,amsfonts,amsthm}     % Math packages
 \usepackage{graphicx}                    % Enable pdflatex
 \usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
-\usepackage{geometry}
+\usepackage[margin=1in]{geometry}        % Decrease margins to 1 inch to make CV wider
 %	\textheight=700px                    % Saving trees ;-)
 \usepackage{url}
 
@@ -214,7 +214,7 @@
 
 %%% Personal details
 %%% ------------------------------------------------------------
-\begin{minipage}[t]{0.6\textwidth}
+\begin{minipage}[t]{0.65\textwidth}
   \textbf{Citizenship}: Spanish \par
   \textbf{Cell phone}: +34 664 661 687 \par
   \textbf{Email}: \href{mailto:antortjim@alum.us.es}{antortjim@alum.us.es} \par
@@ -222,13 +222,14 @@
   \leftskip=0cm \textbf{Website}: \href{http://www.antortega.com}{antortega.com} \par
   
 \end{minipage}
-\begin{minipage}[t]{0.3\textwidth}
+\begin{minipage}[t]{0.35\textwidth}
   \textbf{LinkedIn}: \href{http://www.linkedin.com/in/antortjim}{linkedin.com/in/antortjim} \\
    \textbf{SO careers}:\\
    \href{http://careers.stackoverflow.com/antortjim}{careers.stackoverflow.com/antortjim} \\
 
 \end{minipage}
 
+<<<<<<< Updated upstream
 %%% Awards
 %%% ------------------------------------------------------------
 \NewPart{Awards}{}
@@ -239,6 +240,38 @@ The two best high school students from the province of Huelva were awarded this 
 
 \AwardEntry{Paco Anillo Award on Mathematics representing Huelva}{2008}{Andalusian Association for Mathematical Education THALES}{\begin{changemargin}{0cm}{2cm}A prize bestowed in every andalusian province upon the most genuine solution proposed to one of the exercises posed at the Mathematical contest undergone in the same year.\end{changemargin}}
 
+=======
+
+%%% Education
+%%% ------------------------------------------------------------
+\NewPart{Education}{}
+
+\EducationEntry{MSc. Bioinformatics}{2016-2018}{University of Copenhagen}{Prospective student.}
+\sepspace
+
+\EducationEntry{BSc. Biochemistry}{2012-2016}{University of Seville}{\textbf{GPA}: 2.57/4.0. \textbf{Average}: 8.43/10 \\
+  %\footnote{Computed as $1 + \frac{\mbox{10 based score} - 5}{5} \times 3 $}\\
+  Honors on Statistics, Biosynthesis of Macromolecules, Human Genetics, and Bioinformatics.}
+\sepspace
+ 
+\EducationEntry{Health Sciences High School}{2010-2012}{I.E.S Alto Conquero}{\textbf{Average}: 9.1/10}
+
+
+%%% Awards
+%%% ------------------------------------------------------------
+\NewPart{Awards}{}
+
+\AwardEntry{Best Huelva province high-school record}{2012}{Government of Andalusia}{
+The two best high school students from the province of Huelva were awarded this prize.}
+\sepspace
+
+\AwardEntry{Paco Anillo Award on Mathematics representing Huelva}{2008}{Andalusian Association for Mathematical Education THALES}{A prize bestowed in every andalusian province upon the most genuine solution proposed to one of the exercises posed at the Mathematical contest undergone in the same year.}
+
+
+
+ 
+ 
+>>>>>>> Stashed changes
 %%% Computational Skills
 %%% ------------------------------------------------------------
 \NewPart{Computational Skills}
@@ -247,7 +280,16 @@ The two best high school students from the province of Huelva were awarded this 
 \sepspace
 
 \SkillsEntry{Bioinformatics}{Microarrays, RNA-seq, ChIP-seq, Sequence analysis, Phylogeny,}
+<<<<<<< Updated upstream
 \SkillsEntry{}{Modeling, Gene Networks}
+=======
+\SkillsEntry{methods}{Modeling, Gene Networks}
+\sepspace
+
+
+\SkillsEntry{Bioinformatics}{Protocolo Tuxedo, IGV, GATK, COPASI,}
+\SkillsEntry{software}{Cytoscape, CellDesigner, Scipio}
+>>>>>>> Stashed changes
 \sepspace
 
 \SkillsEntry{Programming languages}{R \& Bioconductor, Octave/MATLAB, Python, HTML, CSS}
@@ -279,9 +321,9 @@ The two best high school students from the province of Huelva were awarded this 
 
 %%% Conferences attended
 %%% ------------------------------------------------------------
-\NewPart{Conferences attended}
-\VolunteeringEntry{}{}
-\VolunteeringEntry{Estudiante}{through simple experimental performances.}
+%\NewPart{Conferences attended}
+%\VolunteeringEntry{}{}
+%\VolunteeringEntry{Estudiante}{through simple experimental performances.}
 
 
 %%% Volunteering
