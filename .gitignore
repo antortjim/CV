@@ -1,0 +1,14 @@
+#PDF files
+*.pdf
+
+#Latex workflow files
+*.log
+*.out
+*.gz
+*.aux
+
+#Pictures
+*.jpg
+*.png
+*.xcf
+
