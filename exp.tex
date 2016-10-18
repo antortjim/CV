@@ -1,0 +1,156 @@
+\documentclass[12pt, oneside]{memoir}
+
+\newif\ifblackandwhite
+%\blackandwhitetrue
+
+\usepackage{booktabs, siunitx}
+\usepackage{fontspec}%
+
+\defaultfontfeatures{Ligatures=TeX}%
+\setmainfont[%
+   Numbers        = OldStyle ,
+   ItalicFont     = LinLibertineOI ,
+   BoldItalicFont = LinLibertineOBI ,
+   BoldFont       = LinLibertineOB ,
+]{LinLibertineO}%
+
+
+\usepackage[hmargin=2cm,vmargin=1.5cm]{geometry}
+\usepackage{etoolbox}
+\usepackage{longtable}%
+\AtBeginEnvironment{longtable}{%
+  \addfontfeature{RawFeature=+tnum;-onum}%  <--- requires LuaTeX
+}
+
+\usepackage{pdflscape}
+\usepackage[svgnames]{xcolor}
+\usepackage{colortbl}%
+  \newcommand{\myrowcolour}{\rowcolor[gray]{0.925}}
+\usepackage{booktabs}
+
+\ifblackandwhite
+  \newcommand{\cheading}[2]{\textbf{#1\hfill #2}}
+  \newcommand{\highest}[1]{\textbf{#1}}% == highest score for question
+\else
+  \newcommand{\cheading}[2]{\textcolor{Maroon}{\textbf{#1\hfill #2}}}
+  \newcommand{\highest}[1]{\textcolor{Maroon}{\textbf{#1}}}%
+\fi
+
+
+
+\begin{document}
+\thispagestyle{empty}
+\parindent0pt
+%
+
+\cheading{Antonio Ortega's Academic Record at the University of Seville}{Sept.\ 2012 --- July 2016}
+
+\begin{footnotesize}
+\begin{longtable}{@{}l cc cc cc cc cc cc}
+% pairs: absolute number (percentage)
+
+\toprule%
+ \centering%
+ & \multicolumn{1}{c}{{{\bfseries 10-based score}}}
+ & \multicolumn{1}{c}{{{\bfseries Grade}}}
+ & \multicolumn{1}{c}{{{\bfseries Credits}}}
+ & \multicolumn{1}{c}{{{\bfseries Year}}} \\
+
+\cmidrule[0.4pt](r{0.125em}){1-1}%
+\cmidrule[0.4pt](lr{0.125em}){2-2}%
+\cmidrule[0.4pt](lr{0.125em}){3-3}%
+\cmidrule[0.4pt](lr{0.125em}){4-4}%
+\cmidrule[0.4pt](l{0.25em}){5-5}%
+
+% \midrule
+\endhead
+    \myrowcolour%
+    General Chemistry              & 6   & C & 6 & 1 \\ 
+    Cell Biology                   & 7   & B & 6 & 1 \\
+    
+    \myrowcolour%\\
+    Organic Chemistry              & 7   & B & 6 & 1 \\
+    Physics                        & 7.5 & B & 6 & 1 \\
+    
+    \myrowcolour%
+    Introduction to Biochemistry   & 8.4 & B & 6 & 1 \\            
+    Physical Chemistry             & 9   & A & 6 & 1 \\    
+
+    \myrowcolour%
+    Introduction to Microbiology   & 9   & A & 6 & 1 \\    
+    Introduction to Genetics       & 9   & A & 6 & 1 \\    
+
+    \myrowcolour%
+    Mathematics                    & 9.2 & A & 6 & 1 \\    
+    Statistics                     & 10  & H & 6 & 1 \\        
+
+    \myrowcolour%
+    Structure of Macromolecules    & 6.7   & C & 6 & 2 \\        
+    Histology                      & 7   & B & 6 & 2 \\        
+
+    \myrowcolour%
+    Biophysics                     & 7.5   & B & 6 & 2 \\        
+    Immunology                     & 7.6   & B & 6 & 2 \\        
+
+    \myrowcolour%
+    Enzymology                     & 8.1 & B & 6 & 2 \\        
+    Experimental Biochemistry II   & 8.3 & B & 6 & 2 \\        
+
+    \myrowcolour%
+    Regulation of Metabolism       & 8.4 & B & 6 & 2 \\            
+    Applied Computer Science       & 8.5 & B & 6 & 2 \\            
+
+    \myrowcolour%
+    Experimental Biochemistry I    & 9   & B & 6 & 2 \\        
+    Biosynthesis of Macromolecules & 9.2 & H & 6 & 2 \\            
+
+    \myrowcolour%
+    Microbial Biotechnology        & 7.3 & B & 6 & 3 \\                
+    Quantitative Methods           & 8.4 & B & 6 & 3 \\                    
+
+    \myrowcolour%
+    Environmental Biotechnology    & 9   & A & 6 & 3 \\                 
+    Systems Molecular Biology      & 9.2 & A & 6 & 3 \\                    
+
+    \myrowcolour%
+    Biochemistry, Biotechnology and Society & 9.3 & A & 6 & 3 \\                    
+    Molecular Genetics and Genetic Engineering & 9.3 & A & 6 & 3 \\
+
+    \myrowcolour%
+    Animal Biotechnology           & 9.5 & A & 6 & 3 \\     
+    Plant Biotechnology            & 9.5 & A & 6 & 3 \\     
+
+    \myrowcolour%
+    Animal Molecular Physiology    & 9.7 & A & 6 & 3 \\                    
+    Plant Molecular Physiology     & 9.8 & A & 6 & 3 \\ 
+    
+    \myrowcolour%
+    Bioreactors and Processes Technology & 7.9 & B & 6 & 4 \\                    
+    Food Biotechnology     & 7.9 & B & 6 & 4 \\
+    
+    \myrowcolour%
+    Marine Biotechnology & 9.5 & A & 6 & 4 \\                    
+    Human Genetics & 9.4 & H & 6 & 4 \\               
+
+    \myrowcolour
+    Bioinformatics and Genomic Analysis     & 10 & H & 6 & 4 \\
+    Nanotechnology                          & 8 & B & 6 & 4 \\
+    
+    \myrowcolour
+    Industrial Bioprocesses                 & 7 & B & 6 & 4 \\
+    English C1                              & - & - & 6 & 4 \\
+    
+    \myrowcolour      
+    Bachelor Thesis                         & 8.5& B & 12 & 4 \\   
+               
+\bottomrule
+\end{longtable}
+\end{footnotesize}
+C = Sufficient. B = Notable. A = Outstanding. H = Honors (Distinction)
+
+\vspace{1cm}
+
+\textbf{Total ECTS}: 240 \\
+\textbf{10-point average}: 8.46
+
+\end{document}
