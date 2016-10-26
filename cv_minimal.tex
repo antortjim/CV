@@ -53,7 +53,9 @@
 \newcommand\F{\textrm{F}}  % "false"
 \usepackage{xspace}
 \usepackage{fancyhdr}
- 
+\usepackage{multicol} %lists on multicolumns side by side
+\usepackage{scrextend} %add margins
+
 \pagestyle{fancy}
 \fancyhf{}
 \lhead{\textbf{Antonio Ortega Jiménez}}
@@ -113,7 +115,7 @@
 		\noindent\hangindent=2em\hangafter=0 % Indentation
 		\parbox{\spacebox}{        % Box to align text
 		\textit{#1}}			   % Entry name (birth, address, etc.)
-		\hspace{1.5em} #2 \par}    % Entry value	
+		\hspace{1.5em}  #2 \par}    % Entry value	
 		
 \newcommand{\EducationEntry}[4]{
 		\noindent \textbf{#1} \hfill      % Study
@@ -121,7 +123,7 @@
 			\parbox{6em}{%
 			\hfill\color{White}#2}} \par  % Duration
 		\noindent \textit{#3} \par        % School
-		\noindent\hangindent=1em\hangafter=0 \small #4 % Description
+		%\noindent\hangindent=1em\hangafter=0 \small #4 % Description
 		\normalsize \par}
 
 \newcommand{\AwardEntry}[4]{
@@ -130,7 +132,7 @@
 			\parbox{3em}{%
 			\hfill\color{White}#2}} \par  % Duration
 		\noindent \textit{#3} \par        % School
-		  \noindent\hangindent=1em\hangafter=0 \small #4  % Description
+%		  \noindent\hangindent=1em\hangafter=0 \small #4  % Description
 		\normalsize \par}
 		
 		
@@ -150,6 +152,11 @@
 		
 %Shortcuts
 \newcommand{\apostrofe}{\textquotesingle\xspace}
+\newcommand{\github}{\raisebox{-.25\height}{\includegraphics[width=13pt]{images/github_grey.png}}}
+\newcommand{\stack}{\raisebox{-.25\height}{\includegraphics[width=13pt]{images/stack_1_grey.png}}}
+\newcommand{\linkedin}{\raisebox{-.25\height}{\includegraphics[width=13pt]{images/linkedin_grey.png}}}
+
+\newcommand{\mail}{\raisebox{-.25\height}{\includegraphics[width=13pt]{images/mail_grey.png}}}
 
 
 %% Custom colors
@@ -201,33 +208,29 @@
 %
 %\sepspace
 
-\thispagestyle{plain}
+\thispagestyle{empty}
 % Set your name here
 \def\name{\textcolor{StrongRed}{Antonio Ortega Jim\'enez}}
 
+
 \centerline{\LARGE\bf \name}
 \vspace{0.1in}
-\centerline{\textcolor{awesome-red}{\textsc{Bioinformatician}}}
-\vspace{0.25in}
+\centerline{\textcolor{awesome-red}{\textsc{Bioinformatics student }}}
+\vspace{5pt}
 
 
 
 %%% Personal details
 %%% ------------------------------------------------------------
-\begin{minipage}[t]{0.65\textwidth}
-  \textbf{Citizenship}: Spanish \par
-  \textbf{Cell phone}: +45 91 88 48 04 \par
-  \textbf{Email}: \href{mailto:antortjim@alum.us.es}{antortjim@alum.us.es} \par
-  \leftskip=1.1cm  \href{mailto:rnq313@alumni.ku.dk}{rnq313@alumni.ku.dk} \par
-  \leftskip=0cm \textbf{Website}: \href{https://antortjim.github.io}{https://antortjim.github.io} \par
-  
-\end{minipage}
-\begin{minipage}[t]{0.35\textwidth}
-  \textbf{LinkedIn}: \href{http://www.linkedin.com/in/antortjim}{linkedin.com/in/antortjim} \\
-   \textbf{SO careers}:\\
-   \href{http://stackoverflow.com/cv/antortjim}{http://stackoverflow.com/cv/antortjim} \\
+\centerline{ Spanish | K{\o}benhavn N | +45 918 848 04}
+\centerline{ \mail \hspace{2pt} \href{mailto:rnq313@alumni.ku.dk}{rnq313@alumni.ku.dk}}
+\vspace{3pt}
+\centerline{ \href{https://antortjim.github.io}{\large{\textbf{antortjim.github.io}}} }
+\vspace{5pt}
+\centerline{ \href{https://github.com/antortjim}{\github} \hspace{2pt}  \href{https://dk.linkedin.com/in/antortjim/en}{\linkedin} \hspace{2pt} \href{http://stackoverflow.com/cv/antortjim}{\stack} \hspace{2pt} @antortjim}
 
-\end{minipage}
+%%Goal
+\IfFileExists{goaltex}{\input{goal.tex}}{}
 
 
 
@@ -235,60 +238,84 @@
 %%% ------------------------------------------------------------
 \NewPart{Education}{}
 
-\EducationEntry{MSc. Bioinformatics}{2016-2018}{University of Copenhagen}{First year student.}
+\EducationEntry{MSc. Bioinformatics}{2016-2018}{University of Copenhagen}{}
 \sepspace
 
-\EducationEntry{BSc. Biochemistry}{2012-2016}{University of Seville}{\textbf{GPA}: 2.51/4.0. \textbf{Average}: 8.46/10 \\
-  %\footnote{Computed as $1 + \frac{\mbox{10 based score} - 5}{5} \times 3 $}\\
-  Honors on Statistics, Biosynthesis of Macromolecules, Human Genetics, and Bioinformatics.}
-\sepspace
- 
-\EducationEntry{Health Sciences High School}{2010-2012}{I.E.S Alto Conquero}{\textbf{Average}: 9.1/10}
+\EducationEntry{BSc. Biochemistry}{2012-2016}{University of Seville}{}
 
 
 %%% Awards
 %%% ------------------------------------------------------------
 \NewPart{Awards}{}
 
-\AwardEntry{Best Huelva province high-school record}{2012}{Government of Andalusia}{
-The two best high school students from the province of Huelva were awarded this prize.}
-\sepspace
+\AwardEntry{Best Huelva province high-school record}{2012}{Government of Andalusia}{}
 
-\AwardEntry{Paco Anillo Award on Mathematics representing Huelva}{2008}{Andalusian Association for Mathematical Education THALES}{A prize bestowed in every Andalusian province upon the most genuine solution proposed to one of the exercises posed at the Mathematical contest undergone in the same year.}
+%\AwardEntry{Paco Anillo Award on Mathematics representing Huelva}{2008}{Andalusian Association for Mathematical Education THALES}{A prize bestowed in every Andalusian province upon the most genuine solution proposed to one of the exercises posed at the Mathematical contest undergone in the same year.}
 
-
-
- 
- 
-%%% Computational Skills
+%%% Practical Skills
 %%% ------------------------------------------------------------
-\NewPart{Computational Skills}
+\NewPart{Practical Skills}
 
-\SkillsEntry{Machine Learning}{Neural Networks, Support Vector Machines, K-means, PCA}
-\sepspace
+\begin{multicols}{4}
 
-\SkillsEntry{Bioinformatics}{Microarrays, RNA-seq, ChIP-seq, Sequence analysis, Phylogeny,}
-\SkillsEntry{methods}{Modeling, Gene Networks, HMMs, Dynamic Programming}
-\sepspace
+\begin{itemize}
+\item R
+\item Python
+\item Octave
+\item Linux shell
+\end{itemize}
+
+\columnbreak
+
+\begin{itemize}
+\item RNA-seq
+\item ChIP-seq
+\item Phylogenetics
+\item Bio databases
+\end{itemize}
+
+\columnbreak
+
+\begin{itemize}
+\item Gene networks
+\item Machine learning
+\item SGE clusters
+\item Github and OSS
+\end{itemize}
+
+\columnbreak
+
+\begin{itemize}
+\item PCR
+\item Electrophoresis
+\item Bacterial culture
+\item DNA handling
+\end{itemize}
+\end{multicols}
 
 
-\SkillsEntry{Bioinformatics}{Tuxedo protocol, IGV, GATK, COPASI,}
-\SkillsEntry{software}{Cytoscape, CellDesigner, Scipio}
-\sepspace
+%%% Languages
+%%% ------------------------------------------------------------
+\NewPart{Languages}
 
-\SkillsEntry{Programming languages}{R \& Bioconductor, Octave/MATLAB, Python, HTML, CSS}
-\sepspace
+\begin{multicols}{2}
 
-\SkillsEntry{Technologies}{Linux, Bash, Vim, Latex, Arduino, GitHub, Inkscape, Jekyll}
+Spanish 
+
+\columnbreak
+
+English
+
+\end{multicols}
 
 %%% Projects
 %%% ------------------------------------------------------------
-\NewPart{Research Projects (wet lab)}{}
+%\NewPart{Research Projects (wet lab)}{}
+%
+%\EducationEntry{Characterization of \textit{sigE}\textquotesingle s promoter}{2014-2015}{CIC Cartuja - CSIC}{\begin{changemargin}{0cm}{3cm}Collaborated with Drs. Muro and Vioque's group on the characterization of the \textit{sigE} gene promoter in \textit{Nostoc PCC7120}.\end{changemargin}}
+%
+%\EducationEntry{Characterization of All1873}{2015-2016}{CIC Cartuja - CSIC}{Carried out my bachelor thesis on the heterologous expression of All1873, a hypothetical protein of unknown function from \textit{Nostoc PCC7120}, in \textit{E. coli}.}
 
-\EducationEntry{Characterization of \textit{sigE}\textquotesingle s promoter}{2014-2015}{CIC Cartuja - CSIC}{\begin{changemargin}{0cm}{3cm}Collaborated with Drs. Muro and Vioque's group on the characterization of the \textit{sigE} gene promoter in \textit{Nostoc PCC7120}.\end{changemargin}}
-
-\EducationEntry{Characterization of All1873}{2015-2016}{CIC Cartuja - CSIC}{Carried out my bachelor thesis on the heterologous expression of All1873, a hypothetical protein of unknown function from \textit{Nostoc PCC7120}, in \textit{E. coli}.}
-  
   
 
 
@@ -301,9 +328,9 @@ The two best high school students from the province of Huelva were awarded this 
 
 %%% Volunteering
 %%% ------------------------------------------------------------
-\NewPart{Volunteering}
-\VolunteeringEntry{Salón del}{High-school students were encouraged to study the Life Sciences}
-\VolunteeringEntry{Estudiante}{through simple experimental performances.}
+%\NewPart{Volunteering}
+%\VolunteeringEntry{Salón del}{High-school students were encouraged to study the Life Sciences}
+%\VolunteeringEntry{Estudiante}{through simple experimental performances.}
 
 
   
@@ -313,31 +340,17 @@ The two best high school students from the province of Huelva were awarded this 
   
 %%% Online learning
 %%% ------------------------------------------------------------
-\NewPart{Complementary education}{}
+%\NewPart{Complementary education}{}
+%
+%
+%\AwardEntry{Summer School on Bioinformatics}{2015}{Complutense University of Madrid}{}  
+%  
+%\AwardEntry{Python Syntax Course}{2015}{Codecademy}{}
+%
+%
+%\AwardEntry{Machine Learning by Andrew Ng}{2016}{University of Stanford at Coursera}{}
 
 
-\AwardEntry{Summer School on Bioinformatics}{2015}{Complutense University of Madrid}{}  
-  
-\AwardEntry{Python Syntax Course}{2015}{Codecademy}{}
-
-
-\AwardEntry{Machine Learning by Andrew Ng}{2016}{University of Stanford at Coursera}{}
-
-
-%%% Languages
-%%% ------------------------------------------------------------
-\NewPart{Languages}
-
-\SkillsEntry{Spanish}{(Mother tongue)}
-\sepspace
-
-\SkillsEntry{English}{C1 level (advanced)}
-\sepspace
-
-\SkillsEntry{French}{B1 level (basic)}
-\sepspace
-
-%\SkillsEntry{Danish}{}
 
 
 
@@ -352,32 +365,33 @@ The two best high school students from the province of Huelva were awarded this 
 
 
 \NewPart{Hobbies}
-I enjoy practising sports, particularly jogging and strength training, and I always try to move around by bike. I really enjoy listening to rock and electronic bands like AC/DC and Prodigy. I am fond of learning languages and new cultures.
+Sports, travel, music, culture and languages.
 
 \NewPart{Portfolio}
 
 A listing of relevant projects in Bioinformatics carried out during my Bachelor of Science can be retrieved at \href{https://antortjim.github.io/portfolio/}{https://antortjim.github.io/portfolio/}.
 
-
-
-\NewPart{Appendix}
+%\NewPart{Appendix}
 %\vspace{-0.6cm}
 %\textcolor{awesome-red}{\rule{432pt}{0.2pt}} \vspace{-0.0cm}
-\begin{enumerate}
-
-%\item \hyperlink{motivation}{Motivation letter} (English)
-
-\item \hyperlink{premio_extraordinario}{Best Huelva province record diploma} (Spanish)
-\item \hyperlink{complu}{Summer School on Bioinformatics at Complutense University} (Spanish)
-
-\item \hyperlink{ML-Coursera}{Machine Learning by Andrew Ng Coursera Certificate (English)}
-
-\item \hyperlink{exp-en}{Official college transcript of results} (English)
-\item \hyperlink{cae}{Certificate in Advanced English} (English)
-\end{enumerate}
+%\begin{enumerate}
+%
+%%\item \hyperlink{motivation}{Motivation letter} (English)
+%
+%\item \hyperlink{premio_extraordinario}{Best Huelva province record diploma} (Spanish)
+%\item \hyperlink{complu}{Summer School on Bioinformatics at Complutense University} (Spanish)
+%
+%\item \hyperlink{ML-Coursera}{Machine Learning by Andrew Ng Coursera Certificate (English)}
+%
+%\item \hyperlink{exp-en}{Official college transcript of results} (English)
+%\item \hyperlink{cae}{Certificate in Advanced English} (English)
+%\end{enumerate}
 %
 %\clearpage
 
 
-\input{appendix.tex}
+%\input{appendix.tex}
+
+\vfill
+\textcolor{lightgray}{Extended version at \href{https://antortjim.github.io/cv/en.html}{antortjim.github.io/cv/en.html}}
 \end{document}
