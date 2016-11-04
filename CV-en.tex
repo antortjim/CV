@@ -54,7 +54,9 @@
 \usepackage{xspace}
 \usepackage{fancyhdr}
 \usepackage{multicol} %lists on multicolumns side by side
-\usepackage{multirow}
+\usepackage{array,multirow}
+\usepackage{amsmath}
+\usepackage{ctable}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -161,7 +163,8 @@
 		\parbox{\spacebox}{        % Box to align text
 		\textit{#1}}			   % Entry name (birth, address, etc.)
 		\hspace{1.5em} #2 \par}    % Entry value	
-		
+
+					
 %Shortcuts
 \newcommand{\apostrofe}{\textquotesingle\xspace}
 \newcommand{\github}{\raisebox{-.25\height}{\includegraphics[width=13pt]{images/github_grey.png}}}
@@ -236,8 +239,8 @@
 %%% Personal details
 %%% ------------------------------------------------------------
 \centerline{ Spanish | K{\o}benhavn N}
-\centerline{\phone \hspace{2pt} +45 91 88 48 04   }
-\centerline{ \mail \hspace{2pt} \href{mailto:rnq313@alumni.ku.dk}{rnq313@alumni.ku.dk}}
+\centerline{\phone \hspace{2pt} +\begin{math}45\;91\;88\;48\;04\end{math}}
+\centerline{ \mail \hspace{2pt} \href{mailto:ntoniogu@gmail.com}{ntoniohu@gmail.com}}
 \vspace{3pt}
 \centerline{ \href{https://antortjim.github.io}{\large{\textbf{antortjim.github.io}}} }
 \vspace{5pt}
@@ -247,14 +250,38 @@
 
 %%% Education
 %%% ------------------------------------------------------------
+
+\newcommand{\kulogo}{ \hspace{5pt} \includegraphics[width=30pt]{images/ku_logo.png}}
+\newcommand{\uslogo}{ \hspace{5pt} \includegraphics[width=30pt]{images/us_logo.png}}
+\newcommand{\msctitle}{\textbf{MSc. Bioinformatics.}}
+\newcommand{\bsctitle}{\textbf{BSc. Biochemistry.}}
+\newcommand{\bscyears}{\begin{math}\boldsymbol{2012-2016}\end{math}}
+\newcommand{\mscyears}{\begin{math}\boldsymbol{2016-2018}\end{math}}		
 \NewPart{Education}{}
 
-\EducationEntry{MSc. Bioinformatics}{2016-2018}{University of Copenhagen}{First year student.}
-\sepspace
 
-\EducationEntry{BSc. Biochemistry}{2012-2016}{University of Seville}{\textbf{GPA}: 2.51/4.0. \textbf{Average}: 8.46/10 \\
-  %\footnote{Computed as $1 + \frac{\mbox{10 based score} - 5}{5} \times 3 $}\\
-  Honors on Statistics, Biosynthesis of Macromolecules, Human Genetics, and Bioinformatics.}
+
+\begin{table}[!h]
+\begin{tabular}{c r l}
+\multirow{3}{*}{\kulogo}      & \msctitle                           & \mscyears     \\
+                              & \textit{K{\o}benhavns Universitet}  & \small{First year student}              \\ 
+                              &                                     &               \\ 
+                              &                                     &               \\ 
+\multirow{4}{*}{\uslogo}      & \bsctitle                           &  \bscyears    \\
+                              & \textit{University of Seville}      &  \small{Honors on Statistics, Biosynthesis of Macromolecules,}    \\
+                              &                                     &  \small{Human Genetics, and Bioinformatics.}                \\
+                              &                                     & \small{\textbf{GPA}: \begin{math}3.38/4.0\end{math}.}      \\
+\end{tabular}
+\end{table}
+
+
+
+% \EducationEntry{MSc. Bioinformatics}{2016-2018}{University of Copenhagen}{First year student.}
+%\sepspace
+%
+%\EducationEntry{BSc. Biochemistry}{2012-2016}{University of Seville}{\textbf{GPA}: \begin{math}3.38/4.0\end{math}. \\
+%  %\footnote{Computed as $1 + \frac{\mbox{10 based score} - 5}{5} \times 3 $}\\
+%  Honors on Statistics, Biosynthesis of Macromolecules, Human Genetics, and Bioinformatics.}
 %\sepspace
 % 
 %\EducationEntry{Health Sciences High School}{2010-2012}{I.E.S Alto Conquero}{\textbf{Average}: 9.1/10}
@@ -273,7 +300,7 @@
 \newcommand{\Modules}{matplotlib, numpy, scipy, biopython, pandas, random, re, rpy2.}
 \newcommand{\OOP}{Experience on Object Oriented Programming.}
 %%Linux
-\newcommand{\Linuxlogo}{\includegraphics[width=20pt]{images/tux.png}}
+\newcommand{\Linuxlogo}{\includegraphics[width=20pt]{images/linux_logo.png}}
 \newcommand{\Utilities}{grep, awk, git, ssh, cut, tee, find, sed, wget, ln, vim, kill, ps, top, time.}
 \newcommand{\Methods}{IO redirection, reverse search, wildcards, pipelining, sys admin.}
 \newcommand{\Scripting}{Sun Grid Engine clusters, input parameters, parallelization.}
@@ -293,7 +320,7 @@
 \begin{tabular}{c >{\bfseries}rl}
 \multirow{2}{*}{\Rlogo}       & Bioconductor: &  \Bioconductor    \\
                               & Hadley-verse: &  \Hadley          \\ 
-               Advanced       & Other packgs: &  \CRAN            \\ 
+               Advanced       & Other: &  \CRAN            \\ 
                               &               &                   \\ 
 \multirow{2}{*}{\Pythonlogo}  & Modules:      &  \Modules         \\
                               &               &  \OOP             \\
@@ -304,7 +331,7 @@
                Advanced       & Scripting     &  \Scripting       \\
                               &               &                   \\
 \multirow{2}{*}{\Binflogo}    & Topics:       &  \Topics          \\
-               \binflevel     & Software:     &  \Software         
+               \binflevel     & Software:     &  \Software        \\ 
 \end{tabular}
 \end{table}
 
@@ -338,16 +365,6 @@ The two best high school students from the province of Huelva were awarded this 
 \LanguagesEntry{French}{B1}{B1}{B1}
 \sepspace
 \SkillsEntry{Danish}{Studying A1 level at KU}
-
-%\begin{table}[!h]
-%\begin{tabular}{llll}
-%                 & Writing      & Speaking     & Understanding \\
-%\textit{English} & Advanced     & Advanced     & Proficient    \\
-%\textit{French}  & Intermediate & Intermediate & Intermediate  \\
-%\textit{Danish}  & \multicolumn{3}{l}{Studying A1 level at KU}
-%\end{tabular}
-%\end{table}		
-		
 		
 
 \NewPart{Other practical skills}
@@ -389,7 +406,7 @@ The two best high school students from the province of Huelva were awarded this 
 
 \EducationEntry{Characterization of \textit{sigE}\textquotesingle s promoter}{2014-2015}{CIC Cartuja - CSIC}{\begin{changemargin}{0cm}{3cm}Collaborated with Drs. Muro and Vioque's group on the characterization of the \textit{sigE} gene promoter in \textit{Nostoc PCC7120}.\end{changemargin}}
 
-\EducationEntry{Characterization of All1873}{2015-2016}{CIC Cartuja - CSIC}{Carried out my bachelor thesis on the heterologous expression of All1873, a hypothetical protein of unknown function from \textit{Nostoc PCC7120}, in \textit{E. coli}.}
+\EducationEntry{Characterization of All\begin{math}\boldsymbol{1873}\end{math}}{2015-2016}{CIC Cartuja - CSIC}{Carried out my bachelor thesis on the heterologous expression of All1873, a hypothetical protein of unknown function from \textit{Nostoc PCC7120}, in \textit{E. coli}.}
   
   
 
