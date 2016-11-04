@@ -54,7 +54,7 @@
 \usepackage{xspace}
 \usepackage{fancyhdr}
 \usepackage{multicol} %lists on multicolumns side by side
- 
+\usepackage{multirow}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -245,6 +245,43 @@
 \EducationEntry{Health Sciences High School}{2010-2012}{I.E.S Alto Conquero}{\textbf{Average}: 9.1/10}
 
 
+
+\NewPart{Data Science skills}
+
+%%R
+\newcommand{\Bioconductor}{\textbf{Bioconductor}: cummeRbund, Annotation packages, AnnotationHub, ChIPseeker, topGO.}
+\newcommand{\Hadley}{\textbf{Hadley-verse}: ggplot2, ggvis, dplyr.}
+\newcommand{\CRAN}{\textbf{CRAN}: igraph, knitr, openxlsx.}
+\newcommand{\Rlogo}{\includegraphics[width=20pt]{images/R_logo.png}}
+%%Python
+\newcommand{\Pythonlogo}{\includegraphics[width=20pt]{images/python_logo.png}}
+\newcommand{\Modules}{\textbf{Modules}: matplotlib, numpy, scipy, biopython, pandas, random, re, rpy2.}
+\newcommand{\OOP}{Experience on Object Oriented Programming.}
+%%Linux
+\newcommand{\Linuxlogo}{\includegraphics[width=20pt]{images/tux.png}}
+\newcommand{\Commands}{\textbf{Tools}: grep, awk, ssh, cut, tee, find, sed, wget, ln, vim, kill, ps, top.}
+\newcommand{\Methods}{\textbf{Methods}: IO redirection, reverse search, wildcards, pipelining, sys admin.}
+\newcommand{\Scripting}{\textbf{Scripting}: for, while, if, input parameters, parallelization.}
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[!h]
+\begin{tabular}{cl}
+\multirow{2}{*}{\Rlogo}  &  \Bioconductor \\
+                         &  \Hadley \\
+           Advanced      &  \CRAN   \\
+                         &          \\
+
+\multirow{2}{*}{\Pythonlogo}  &  \Modules \\
+                              &  \OOP \\
+                Intermediate  &       \\
+                              &       \\
+\multirow{2}{*}{\Linuxlogo}  &  \Commands \\
+                             &  \Methods \\
+                Advanced     &  \Scripting
+\end{tabular}
+\end{table}
+
+
 %%% Awards
 %%% ------------------------------------------------------------
 \NewPart{Awards}{}
@@ -257,25 +294,26 @@ The two best high school students from the province of Huelva were awarded this 
 
 
 
- 
-\NewPart{Practical Skills}
+
+\NewPart{Other practical Skills}
+
 
 \begin{multicols}{4}
 
 \begin{itemize}
-\item R
-\item Python
 \item Octave
-\item Linux shell
+\item Latex
+\item HTML and CSS
+\item Sphix and Jekyll
 \end{itemize}
 
 \columnbreak
 
 \begin{itemize}
-\item RNA-seq
-\item ChIP-seq
+\item Omics analysis
 \item Phylogenetics
-\item Bio databases
+\item Databases
+\item Seq. analysis
 \end{itemize}
 
 \columnbreak
