@@ -53,7 +53,9 @@
 \newcommand\F{\textrm{F}}  % "false"
 \usepackage{xspace}
 \usepackage{fancyhdr}
+\usepackage{multicol} %lists on multicolumns side by side
  
+
 \pagestyle{fancy}
 \fancyhf{}
 \lhead{\textbf{Antonio Ortega Jiménez}}
@@ -150,6 +152,11 @@
 		
 %Shortcuts
 \newcommand{\apostrofe}{\textquotesingle\xspace}
+\newcommand{\github}{\raisebox{-.25\height}{\includegraphics[width=13pt]{images/github_grey.png}}}
+\newcommand{\stack}{\raisebox{-.25\height}{\includegraphics[width=13pt]{images/stack_1_grey.png}}}
+\newcommand{\linkedin}{\raisebox{-.25\height}{\includegraphics[width=13pt]{images/linkedin_grey.png}}}
+
+\newcommand{\mail}{\raisebox{-.25\height}{\includegraphics[width=13pt]{images/mail_grey.png}}}
 
 
 %% Custom colors
@@ -214,20 +221,12 @@
 
 %%% Personal details
 %%% ------------------------------------------------------------
-\begin{minipage}[t]{0.65\textwidth}
-  \textbf{Citizenship}: Spanish \par
-  \textbf{Cell phone}: +45 91 88 48 04 \par
-  \textbf{Email}: \href{mailto:antortjim@alum.us.es}{antortjim@alum.us.es} \par
-  \leftskip=1.1cm  \href{mailto:rnq313@alumni.ku.dk}{rnq313@alumni.ku.dk} \par
-  \leftskip=0cm \textbf{Website}: \href{https://antortjim.github.io}{https://antortjim.github.io} \par
-  
-\end{minipage}
-\begin{minipage}[t]{0.35\textwidth}
-  \textbf{LinkedIn}: \href{http://www.linkedin.com/in/antortjim}{linkedin.com/in/antortjim} \\
-   \textbf{SO careers}:\\
-   \href{http://stackoverflow.com/cv/antortjim}{http://stackoverflow.com/cv/antortjim} \\
-
-\end{minipage}
+\centerline{ Spanish | K{\o}benhavn N | +45 918 848 04}
+\centerline{ \mail \hspace{2pt} \href{mailto:rnq313@alumni.ku.dk}{rnq313@alumni.ku.dk}}
+\vspace{3pt}
+\centerline{ \href{https://antortjim.github.io}{\large{\textbf{antortjim.github.io}}} }
+\vspace{5pt}
+\centerline{ \href{https://github.com/antortjim}{\github} \hspace{2pt}  \href{https://dk.linkedin.com/in/antortjim/en}{\linkedin} \hspace{2pt} \href{http://stackoverflow.com/cv/antortjim}{\stack} \hspace{2pt} @antortjim}
 
 
 
@@ -259,27 +258,44 @@ The two best high school students from the province of Huelva were awarded this 
 
 
  
- 
-%%% Computational Skills
-%%% ------------------------------------------------------------
-\NewPart{Computational Skills}
+\NewPart{Practical Skills}
 
-\SkillsEntry{Machine Learning}{Neural Networks, Support Vector Machines, K-means, PCA}
-\sepspace
+\begin{multicols}{4}
 
-\SkillsEntry{Bioinformatics}{Microarrays, RNA-seq, ChIP-seq, Sequence analysis, Phylogeny,}
-\SkillsEntry{methods}{Modeling, Gene Networks, HMMs, Dynamic Programming}
-\sepspace
+\begin{itemize}
+\item R
+\item Python
+\item Octave
+\item Linux shell
+\end{itemize}
 
+\columnbreak
 
-\SkillsEntry{Bioinformatics}{Tuxedo protocol, IGV, GATK, COPASI,}
-\SkillsEntry{software}{Cytoscape, CellDesigner, Scipio}
-\sepspace
+\begin{itemize}
+\item RNA-seq
+\item ChIP-seq
+\item Phylogenetics
+\item Bio databases
+\end{itemize}
 
-\SkillsEntry{Programming languages}{R \& Bioconductor, Octave/MATLAB, Python, HTML, CSS}
-\sepspace
+\columnbreak
 
-\SkillsEntry{Technologies}{Linux, Bash, Vim, Latex, Arduino, GitHub, Inkscape, Jekyll}
+\begin{itemize}
+\item Gene networks
+\item Machine learning
+\item SGE clusters
+\item Github and OSS
+\end{itemize}
+
+\columnbreak
+
+\begin{itemize}
+\item PCR
+\item Electrophoresis
+\item Bacterial culture
+\item DNA handling
+\end{itemize}
+\end{multicols}
 
 %%% Projects
 %%% ------------------------------------------------------------
@@ -301,9 +317,9 @@ The two best high school students from the province of Huelva were awarded this 
 
 %%% Volunteering
 %%% ------------------------------------------------------------
-\NewPart{Volunteering}
-\VolunteeringEntry{Salón del}{High-school students were encouraged to study the Life Sciences}
-\VolunteeringEntry{Estudiante}{through simple experimental performances.}
+%\NewPart{Volunteering}
+%\VolunteeringEntry{Salón del}{High-school students were encouraged to study the Life Sciences}
+%\VolunteeringEntry{Estudiante}{through simple experimental performances.}
 
 
   
@@ -318,7 +334,7 @@ The two best high school students from the province of Huelva were awarded this 
 
 \AwardEntry{Summer School on Bioinformatics}{2015}{Complutense University of Madrid}{}  
   
-\AwardEntry{Python Syntax Course}{2015}{Codecademy}{}
+%\AwardEntry{Python Syntax Course}{2015}{Codecademy}{}
 
 
 \AwardEntry{Machine Learning by Andrew Ng}{2016}{University of Stanford at Coursera}{}
