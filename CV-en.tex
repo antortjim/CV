@@ -116,7 +116,19 @@
 		\parbox{\spacebox}{        % Box to align text
 		\textit{#1}}			   % Entry name (birth, address, etc.)
 		\hspace{1.5em} #2 \par}    % Entry value	
+
+\newcommand{\LanguagesEntry}[4]{      % Same as \PersonalEntry
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}
+		\parbox{\spacebox}{			  
+		\centering{#2}}
+		\parbox{\spacebox}{
+		\centering{#3}}
+		\parbox{\spacebox}{
+		\centering{#4}} \par}
 		
+				
 \newcommand{\EducationEntry}[4]{
 		\noindent \textbf{#1} \hfill      % Study
 		\colorbox{Black}{%
@@ -215,7 +227,7 @@
 \centerline{\LARGE\bf \name}
 \vspace{0.1in}
 \centerline{\textcolor{awesome-red}{\textsc{Bioinformatician}}}
-\vspace{0.25in}
+\vspace{0.15in}
 
 
 
@@ -240,18 +252,18 @@
 \EducationEntry{BSc. Biochemistry}{2012-2016}{University of Seville}{\textbf{GPA}: 2.51/4.0. \textbf{Average}: 8.46/10 \\
   %\footnote{Computed as $1 + \frac{\mbox{10 based score} - 5}{5} \times 3 $}\\
   Honors on Statistics, Biosynthesis of Macromolecules, Human Genetics, and Bioinformatics.}
-\sepspace
- 
-\EducationEntry{Health Sciences High School}{2010-2012}{I.E.S Alto Conquero}{\textbf{Average}: 9.1/10}
+%\sepspace
+% 
+%\EducationEntry{Health Sciences High School}{2010-2012}{I.E.S Alto Conquero}{\textbf{Average}: 9.1/10}
 
 
 
-\NewPart{Data Science skills}
+\NewPart{Bioinformatics skills}
 
 %%R
 \newcommand{\Bioconductor}{\textbf{Bioconductor}: cummeRbund, Annotation packages, AnnotationHub, ChIPseeker, topGO.}
 \newcommand{\Hadley}{\textbf{Hadley-verse}: ggplot2, ggvis, dplyr.}
-\newcommand{\CRAN}{\textbf{CRAN}: igraph, knitr, openxlsx.}
+\newcommand{\CRAN}{\textbf{Other packgs}: igraph, knitr, openxlsx, seqinr.}
 \newcommand{\Rlogo}{\includegraphics[width=20pt]{images/R_logo.png}}
 %%Python
 \newcommand{\Pythonlogo}{\includegraphics[width=20pt]{images/python_logo.png}}
@@ -259,28 +271,45 @@
 \newcommand{\OOP}{Experience on Object Oriented Programming.}
 %%Linux
 \newcommand{\Linuxlogo}{\includegraphics[width=20pt]{images/tux.png}}
-\newcommand{\Commands}{\textbf{Tools}: grep, awk, ssh, cut, tee, find, sed, wget, ln, vim, kill, ps, top.}
+\newcommand{\Utilities}{\textbf{Utilities}: grep, awk, git, ssh, cut, tee, find, sed, wget, ln, vim, kill, ps, top, time.}
 \newcommand{\Methods}{\textbf{Methods}: IO redirection, reverse search, wildcards, pipelining, sys admin.}
-\newcommand{\Scripting}{\textbf{Scripting}: for, while, if, input parameters, parallelization.}
+\newcommand{\Scripting}{\textbf{Scripting}: for, while, if, input parameters, parallelization. SGE clusters.}
+\newcommand{\Binflogo}{\includegraphics[height=20pt]{images/binf_logo.jpg}}
+
+
+
+\newcommand{\Topics}{\begin{tabular}[c]{@{}l@{}}\textbf{Topics}: RNA-seq, ChIP-seq, RNA-seq \textit{de novo}, structure visualization and prediction,\\  gene networks, molecular simulations, database search.\end{tabular}}
+\newcommand{\Software}{
+\begin{tabular}[c]{@{}l@{}}\textbf{Software}: BLAST, HMMER, MEME, Cytoscape, MACS, PeakAnalyzer, Tuxedo protocol,\\ GATK, bwa, samtools, Scipio, COPASI.\end{tabular}}
+\newcommand{\binflevel}{\begin{tabular}[t]{@{}c@{}}Graduate\\ level\end{tabular}}
+
+
 % Please add the following required packages to your document preamble:
 % \usepackage{multirow}
 \begin{table}[!h]
 \begin{tabular}{cl}
-\multirow{2}{*}{\Rlogo}  &  \Bioconductor \\
-                         &  \Hadley \\
-           Advanced      &  \CRAN   \\
-                         &          \\
-
-\multirow{2}{*}{\Pythonlogo}  &  \Modules \\
-                              &  \OOP \\
-                Intermediate  &       \\
-                              &       \\
-\multirow{2}{*}{\Linuxlogo}  &  \Commands \\
-                             &  \Methods \\
-                Advanced     &  \Scripting
+\multirow{2}{*}{\Rlogo}       &  \Bioconductor    \\
+                              &  \Hadley          \\ 
+               Advanced       &  \CRAN            \\ 
+                              &                   \\ 
+\multirow{2}{*}{\Pythonlogo}  &  \Modules         \\
+                              &  \OOP             \\
+               Intermediate   &                   \\
+                              &                   \\
+\multirow{2}{*}{\Linuxlogo}   &  \Utilities       \\
+                              &  \Methods         \\
+               Advanced       &  \Scripting       \\
+                              &                   \\
+\multirow{2}{*}{\Binflogo}    &  \Topics          \\
+               \binflevel     &  \Software         
 \end{tabular}
 \end{table}
 
+\NewPart{Portfolio}
+
+A listing of relevant projects in Bioinformatics carried out during my Bachelor of Science can be retrieved at \href{https://antortjim.github.io/portfolio/}{https://antortjim.github.io/portfolio/}.
+
+\newpage
 
 %%% Awards
 %%% ------------------------------------------------------------
@@ -293,9 +322,32 @@ The two best high school students from the province of Huelva were awarded this 
 \AwardEntry{Paco Anillo Award on Mathematics representing Huelva}{2008}{Andalusian Association for Mathematical Education THALES}{A prize bestowed in every Andalusian province upon the most genuine solution proposed to one of the exercises posed at the Mathematical contest undergone in the same year.}
 
 
+%%% Languages
+%%% ------------------------------------------------------------
+\NewPart{Languages}
 
+\SkillsEntry{Spanish}{\textbf{Native}}
+\sepspace
 
-\NewPart{Other practical Skills}
+\LanguagesEntry{}{\textbf{Writing}}{\textbf{Speaking}}{\textbf{Understanding}}
+\LanguagesEntry{English}{C1}{C1}{C2}
+\sepspace
+\LanguagesEntry{French}{B1}{B1}{B1}
+\sepspace
+\SkillsEntry{Danish}{Studying A1 level at KU}
+
+%\begin{table}[!h]
+%\begin{tabular}{llll}
+%                 & Writing      & Speaking     & Understanding \\
+%\textit{English} & Advanced     & Advanced     & Proficient    \\
+%\textit{French}  & Intermediate & Intermediate & Intermediate  \\
+%\textit{Danish}  & \multicolumn{3}{l}{Studying A1 level at KU}
+%\end{tabular}
+%\end{table}		
+		
+		
+
+\NewPart{Other practical skills}
 
 
 \begin{multicols}{4}
@@ -303,6 +355,12 @@ The two best high school students from the province of Huelva were awarded this 
 \begin{itemize}
 \item Octave
 \item Latex
+
+\end{itemize}
+
+\columnbreak
+
+\begin{itemize}
 \item HTML and CSS
 \item Sphix and Jekyll
 \end{itemize}
@@ -310,19 +368,8 @@ The two best high school students from the province of Huelva were awarded this 
 \columnbreak
 
 \begin{itemize}
-\item Omics analysis
-\item Phylogenetics
-\item Databases
-\item Seq. analysis
-\end{itemize}
-
-\columnbreak
-
-\begin{itemize}
-\item Gene networks
 \item Machine learning
-\item SGE clusters
-\item Github and OSS
+\item Arduino
 \end{itemize}
 
 \columnbreak
@@ -330,8 +377,6 @@ The two best high school students from the province of Huelva were awarded this 
 \begin{itemize}
 \item PCR
 \item Electrophoresis
-\item Bacterial culture
-\item DNA handling
 \end{itemize}
 \end{multicols}
 
@@ -378,20 +423,7 @@ The two best high school students from the province of Huelva were awarded this 
 \AwardEntry{Machine Learning by Andrew Ng}{2016}{University of Stanford at Coursera}{}
 
 
-%%% Languages
-%%% ------------------------------------------------------------
-\NewPart{Languages}
 
-\SkillsEntry{Spanish}{(Mother tongue)}
-\sepspace
-
-\SkillsEntry{English}{C1 level (advanced)}
-\sepspace
-
-\SkillsEntry{French}{B1 level (basic)}
-\sepspace
-
-%\SkillsEntry{Danish}{}
 
 
 
@@ -408,9 +440,7 @@ The two best high school students from the province of Huelva were awarded this 
 \NewPart{Hobbies}
 I enjoy practising sports, particularly jogging and strength training, and I always try to move around by bike. I really enjoy listening to rock and electronic bands like AC/DC and Prodigy. I am fond of learning languages and new cultures.
 
-\NewPart{Portfolio}
 
-A listing of relevant projects in Bioinformatics carried out during my Bachelor of Science can be retrieved at \href{https://antortjim.github.io/portfolio/}{https://antortjim.github.io/portfolio/}.
 
 
 
