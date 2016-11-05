@@ -54,7 +54,7 @@
 \usepackage{xspace}
 \usepackage{fancyhdr}
 \usepackage{multicol} %lists on multicolumns side by side
-\usepackage{array,multirow}
+\usepackage{multirow}
 \usepackage{amsmath}
 \usepackage{ctable}
 
@@ -258,22 +258,33 @@
 
 \newcommand{\kulogo}{ \hspace{5pt} \includegraphics[width=30pt]{images/ku_logo.png}}
 \newcommand{\uslogo}{ \hspace{5pt} \includegraphics[width=30pt]{images/us_logo.png}}
-\newcommand{\msctitle}{\textbf{MSc. Bioinformatics}}
+\newcommand{\msctitle}{%\begin{tabular}[c]{@{}c@{}}
+                       \textbf{MSc.} %\\
+                       \textbf{Bioinformatics}
+                       %\end{tabular}
+                       }
+
+
 \newcommand{\bsctitle}{\textbf{BSc. Biochemistry}}
 \newcommand{\bscyears}{\begin{math}\boldsymbol{2012-2016}\end{math}}
 \newcommand{\mscyears}{\begin{math}\boldsymbol{2016-2018}\end{math}}		
 \NewPart{Education}{}
 
+\newcolumntype{L}[1]{>{\fontfamily{cmss}\selectfont \raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+
 
 
 \begin{table}[!h]
-\begin{tabular}{c r l}
+\begin{tabular}{C{50pt} R{100pt} l}
 \multirow{3}{*}{\kulogo}      & \msctitle                           & \mscyears     \\
                               & \textit{K{\o}benhavns Universitet}  & \small{First year student.}              \\ 
                               &                                     &               \\ 
                               &                                     &               \\ 
 \multirow{4}{*}{\uslogo}      & \bsctitle                           &  \bscyears    \\
-                              & \textit{University of Seville}      &  \small{Honors on Statistics, Biosynthesis of Macromolecules,}    \\
+                              & \textit{Universidad de Sevilla}      &  \small{Honors on Statistics, Biosynthesis of Macromolecules,}    \\
                               &                                     &  \small{Human Genetics, and Bioinformatics.}                \\
                               &                                     & \small{\textbf{GPA}: \begin{math}3.38/4.0\end{math}.}      \\
 \end{tabular}
@@ -296,33 +307,47 @@
 \NewPart{Bioinformatics skills}
 
 %%R
-\newcommand{\Bioconductor}{cummeRbund, Annotation packages, ChIPseeker, topGO.}
-\newcommand{\Hadley}{ggplot2, ggvis, dplyr.}
-\newcommand{\CRAN}{igraph, knitr, openxlsx, seqinr.}
+\newcommand{\Bioconductor}{cummeRbund · Annotation packages · ChIPseeker · topGO.}
+\newcommand{\Hadley}{ggplot2 · ggvis · dplyr.}
+\newcommand{\CRAN}{igraph · knitr · openxlsx · seqinr.}
 \newcommand{\Rlogo}{\includegraphics[width=20pt]{images/R_logo.png}}
 %%Python
 \newcommand{\Pythonlogo}{\includegraphics[width=20pt]{images/python_logo.png}}
-\newcommand{\Modules}{matplotlib, numpy, scipy, biopython, pandas, random, re, rpy2.}
+\newcommand{\Modules}{matplotlib · numpy · scipy · biopython · pandas · random · re · rpy2.}
 \newcommand{\OOP}{Experience on Object Oriented Programming.}
 %%Linux
 \newcommand{\Linuxlogo}{\includegraphics[width=20pt]{images/linux_logo.png}}
-\newcommand{\Utilities}{grep, awk, git, ssh, cut, tee, find, sed, wget, ln, vim, kill, ps, top, time.}
-\newcommand{\Methods}{IO redirection, wildcards and regex, pipelining, sys admin.}
-\newcommand{\Scripting}{Sun Grid Engine clusters, input parameters, parallelization.}
+\newcommand{\Utilities}{grep · awk · git · ssh · cut · tee · find · sed · wget · ln · vim · kill · ps.}
+\newcommand{\Methods}{IO redirection · wildcards and regex · pipelining · sys admin.}
+\newcommand{\Scripting}{Sun Grid Engine clusters · input parameters · parallelization.}
 \newcommand{\Binflogo}{\includegraphics[height=20pt]{images/binf_logo.jpg}}
 
 
 
-\newcommand{\Topics}{\begin{tabular}[c]{@{}l@{}}RNA-seq, ChIP-seq, RNA-seq \textit{de novo}, gene networks, database search, \\ structure visualization and prediction, molecular simulations.\end{tabular}}
+\newcommand{\Topics}{
+                    %\begin{tabular}[c]{@{}l@{}}
+                    RNA-seq · ChIP-seq · RNA-seq \textit{de novo} · gene networks · database search · %\\
+                    structure visualization and prediction · simulations.
+                    %\end{tabular}
+                    }
 \newcommand{\Software}{
-\begin{tabular}[c]{@{}l@{}}BLAST, HMMER, MEME, Cytoscape, MACS, PeakAnalyzer,\\ Tuxedo protocol, GATK, bwa, samtools, Scipio, COPASI.\end{tabular}}
-\newcommand{\binflevel}{\begin{tabular}[t]{@{}c@{}}Graduate\\ level\end{tabular}}
+            %\begin{tabular}[c]{@{}l@{}}
+            BLAST · HMMER · MEME · Cytoscape · MACS · PeakAnalyzer · %\\
+            Tuxedo protocol · GATK · bwa · samtools · Scipio · COPASI.
+            %\end{tabular}
+            }
+\newcommand{\binflevel}{
+            %\begin{tabular}[b]{@{}c@{}}
+            Graduate %\\
+            level
+            %\end{tabular}
+            }
 
 
 % Please add the following required packages to your document preamble:
 % \usepackage{multirow}
 \begin{table}[!h]
-\begin{tabular}{c >{\bfseries}rl}
+\begin{tabular}{C{60pt} >{\bfseries}R{90pt} L{290pt}}
 \multirow{2}{*}{\Rlogo}       & Bioconductor: &  \Bioconductor    \\
                               & Hadley-verse: &  \Hadley          \\ 
                Advanced       & Other: &  \CRAN            \\ 
@@ -335,7 +360,8 @@
                               & Methods:      &  \Methods         \\
                Advanced       & Scripting     &  \Scripting       \\
                               &               &                   \\
-\multirow{2}{*}{\Binflogo}    & Topics:       &  \Topics          \\
+\multirow{3}{*}{\Binflogo}    & Topics:       &  \Topics          \\
+                              &               &                   \\
                \binflevel     & Software:     &  \Software        \\ 
 \end{tabular}
 \end{table}
@@ -468,7 +494,7 @@ I enjoy practising sports, particularly jogging and strength training, and I alw
 
 \item \hyperlink{ML-Coursera}{Machine Learning by Andrew Ng Coursera Certificate (English)}
 
-\item \hyperlink{exp-en}{Official college transcript of results} (English)
+\item \hyperlink{exp-en}{College transcript of results} (English)
 \item \hyperlink{cae}{Certificate in Advanced English} (English)
 \end{enumerate}
 %
