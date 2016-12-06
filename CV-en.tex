@@ -57,6 +57,8 @@
 \usepackage{multirow}
 \usepackage{amsmath}
 \usepackage{ctable}
+\usepackage{adjustbox} % center images with \adjustimage
+
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -281,11 +283,11 @@
 \begin{tabular}{C{50pt} R{100pt} l}
 \multirow{3}{*}{\kulogo}      & \msctitle                           & \mscyears     \\
                               & \textit{K{\o}benhavns Universitet}  & \small{First year student.}              \\ 
-                              &                                     &               \\ 
+                              & Denmark                             &               \\ 
                               &                                     &               \\ 
 \multirow{4}{*}{\uslogo}      & \bsctitle                           &  \bscyears    \\
-                              & \textit{Universidad de Sevilla}      &  \small{Honors on Statistics, Biosynthesis of Macromolecules,}    \\
-                              &                                     &  \small{Human Genetics, and Bioinformatics.}                \\
+                              & \textit{Universidad de Sevilla}     &  \small{Honors on Statistics, Biosynthesis of Macromolecules,}    \\
+                              & Spain                               &  \small{Human Genetics, and Bioinformatics.}                \\
                               &                                     & \small{\textbf{GPA}: \begin{math}3.38/4.0\end{math}.}      \\
 \end{tabular}
 \end{table}
@@ -320,7 +322,7 @@
 \newcommand{\Utilities}{grep · awk · git · ssh · cut · tee · find · sed · wget · ln · vim · kill · ps.}
 \newcommand{\Methods}{IO redirection · wildcards and regex · pipelining · sys admin.}
 \newcommand{\Scripting}{Sun Grid Engine clusters · input parameters · parallelization.}
-\newcommand{\Binflogo}{\includegraphics[height=20pt]{images/binf_logo.jpg}}
+\newcommand{\Binflogo}{\includegraphics[height=30pt]{images/binf_logo.jpg}}
 
 
 
@@ -360,7 +362,7 @@
                               & Methods:      &  \Methods         \\
                Advanced       & Scripting     &  \Scripting       \\
                               &               &                   \\
-\multirow{3}{*}{\Binflogo}    & Topics:       &  \Topics          \\
+\multirow{2}{*}{\Binflogo}    & Topics:       &  \Topics          \\
                               &               &                   \\
                \binflevel     & Software:     &  \Software        \\ 
 \end{tabular}
@@ -376,6 +378,11 @@ A listing of relevant projects in Bioinformatics carried out during my Bachelor 
 %%% ------------------------------------------------------------
 \NewPart{Awards}{}
 
+
+\newcommand{\extraordinario}{\textbf{Best Huelva province high-school record. 2012}}
+\newcommand{\junta}{Government of Andalusia}
+\newcommand{\extdesc}{The two best high school students from the province of Huelva were awarded this prize.}
+
 \AwardEntry{Best Huelva province high-school record}{2012}{Government of Andalusia}{
 The two best high school students from the province of Huelva were awarded this prize.}
 \sepspace
@@ -387,15 +394,38 @@ The two best high school students from the province of Huelva were awarded this 
 %%% ------------------------------------------------------------
 \NewPart{Languages}
 
-\SkillsEntry{Spanish}{\textbf{Native}}
-\sepspace
 
-\LanguagesEntry{}{\textbf{Writing}}{\textbf{Speaking}}{\textbf{Understanding}}
-\LanguagesEntry{English}{C1}{C1}{C2}
-\sepspace
-\LanguagesEntry{French}{B1}{B1}{B1}
-\sepspace
-\SkillsEntry{Danish}{Studying A1 level at KU}
+\bgroup
+\def\arraystretch{3}%
+\begin{tabular}{@{\hspace{1em}}C{25pt} >{\bfseries}R{40pt} L{100pt}}
+ \adjustimage{height=15pt, width=25pt, valign=m}{images/bandera.jpg}  & Spanish & Native \\
+ \adjustimage{height=15pt, width=25pt, valign=m}{images/flag.png}       & English & Advanced
+\end{tabular} % 
+\begin{tabular}{@{\hspace{1em}}L{25pt} >{\bfseries}R{40pt} L{100pt}}
+ \adjustimage{height=15pt, width=25pt, valign=m}{images/drapeau.png}   & French  & Basic     \\
+ \adjustimage{height=15pt, width=25pt, valign=m}{images/dannebrog.png} & Danish  & Starting
+\end{tabular}
+\egroup
+
+%        \SkillsEntry{Spanish}{Native}
+%        \sepspace
+%        \SkillsEntry{English}{Advanced}
+%        \sepspace
+%        \SkillsEntry{French}{Basic}
+%        \sepspace
+%        \SkillsEntry{Danish}{Studying A1 level at KU}
+%        \sepspace
+
+%        \LanguagesEntry{}{\textbf{Writing}}{\textbf{Speaking}}{\textbf{Understanding}}
+%        \sepspace
+%        \LanguagesEntry{English}{C1}{C1}{C2}
+%        \sepspace
+%        \LanguagesEntry{French}{B1}{B1}{B1}
+
+
+
+
+
 		
 %%% Projects
 %%% ------------------------------------------------------------
@@ -487,7 +517,7 @@ I enjoy practising sports, particularly jogging and strength training, and I alw
 %\textcolor{awesome-red}{\rule{432pt}{0.2pt}} \vspace{-0.0cm}
 \begin{enumerate}
 
-%\item \hyperlink{motivation}{Motivation letter} (English)
+\item \hyperlink{KU_transcript}{Transcript of results from K{\o}benhavns Universitet} (English)
 
 \item \hyperlink{premio_extraordinario}{Best Huelva province record diploma} (Spanish)
 \item \hyperlink{complu}{Summer School on Bioinformatics at Complutense University} (Spanish)
