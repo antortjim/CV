@@ -1,35 +1,24 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% LaTeX Template: Curriculum Vitae
-%
-% Source: http://www.howtotex.com/
-% Feel free to distribute this template, but please keep the
-% referal to HowToTeX.com.
-% Date: July 2011
-% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% How to use writeLaTeX: 
-%
-% You edit the source code here on the left, and the preview on the
-% right shows you the result within a few seconds.
-%
-% Bookmark this page and share the URL with your co-authors. They can
-% edit at the same time!
-%
-% You can upload figures, bibliographies, custom classes and
-% styles using the files menu.
-%
-% If you're new to LaTeX, the wikibook is a great place to start:
-% http://en.wikibooks.org/wiki/LaTeX
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[paper=a4,fontsize=11pt]{article} % KOMA-article class
-							
+\documentclass[paper=a4,fontsize=11pt]{article}
+				
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
+%% Custom colors
+%%% ------------------------------------------------------------
+
+\usepackage[svgnames]{xcolor}
+\definecolor{StrongRed}{RGB}{139,0,0}
+\definecolor{DarkRed}{RGB}{200,0,0}
+\definecolor{awesome-red}{HTML}{DC3522}
+\definecolor{header-bar}{HTML}{994C00}
+\definecolor{awesome-skyblue}{HTML}{0395DE}
+\definecolor{gray}{HTML}{5D5D5D}
+\definecolor{lightgray}{HTML}{999999}
+
 \usepackage[protrusion=true,expansion=true]{microtype}
 \usepackage{amsmath,amsfonts,amsthm}     % Math packages
 \usepackage{graphicx}                    % Enable pdflatex
-\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\newcommand\crule[3][black]{\textcolor{#1}{\rule{#2}{#3}}}
+
 \usepackage[margin=1in]{geometry}        % Decrease margins to 1 inch to make CV wider
 %	\textheight=700px                    % Saving trees ;-)
 \usepackage{url}
@@ -42,7 +31,6 @@
 \usepackage{rotating}
 \usepackage{epstopdf}
 \usepackage{textcomp} % hace falta para poner apostrofe
-%\usepackage[table]{xcolor} % para las tablas bonitas coloreadas. loads also »colortbl«
 \usepackage{array} % necesario para formatear del tiron una columna de una tabla
 \usepackage{booktabs}
 %\usepackage{pbox} % necesario para introducir salto de linea en celdas de una tabla
@@ -53,6 +41,8 @@
 \newcommand\F{\textrm{F}}  % "false"
 \usepackage{xspace}
 \usepackage{fancyhdr}
+%\setlength{\headheight}{13.6pt}
+
 \usepackage{multicol} %lists on multicolumns side by side
 \usepackage{multirow}
 \usepackage{amsmath}
@@ -60,18 +50,6 @@
 \usepackage{adjustbox} % center images with \adjustimage
 
 
-\pagestyle{fancy}
-\fancyhf{}
-\lhead{\textbf{Antonio Ortega Jiménez}}
-\rhead{\textit{Curriculum Vitae}}
-\rfoot{Page \thepage\xspace of 3}
-
-\fancypagestyle{plain}{%
-  \fancyhf{}% Clear header/footer
-  \fancyfoot[OR]{Page \thepage\xspace of 3}%
-  \fancyfoot[EL]{Page \thepage\xspace of 3}%
-  \renewcommand{\headrulewidth}{0pt}%
-}
 
 
 \def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
@@ -80,11 +58,12 @@
 
 
 %% Font usage
-%%% ------------------------------------------------------------
+%%% --------------------c----------------------------------------
 \usepackage[T1]{fontenc}
 \usepackage[osf]{mathpazo}
 
 
+%crule\usepackage{showframe}
 
 \frenchspacing              % Better looking spacings after periods
 %\pagestyle{empty}           % No pagenumbers/headers/footers
@@ -106,66 +85,22 @@
 		\par \normalsize \normalfont}
 
 \newcommand{\NewPart}[1]{\section*{
-									%\uppercase
-									{#1}}}
+%\uppercase
+{#1}}}
 
-\newcommand{\PersonalEntry}[2]{
-		\noindent\hangindent=2em\hangafter=0 % Indentation
-		\parbox{\spacebox}{        % Box to align text
-		\textit{#1}}		       % Entry name (birth, address, etc.)
-		\hspace{1.5em} #2 \par}    % Entry value
 
-\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
-		\noindent\hangindent=2em\hangafter=0 % Indentation
-		\parbox{\spacebox}{        % Box to align text
-		\textit{#1}}			   % Entry name (birth, address, etc.)
-		\hspace{1.5em} #2 \par}    % Entry value	
-
-\newcommand{\LanguagesEntry}[4]{      % Same as \PersonalEntry
-		\noindent\hangindent=2em\hangafter=0 % Indentation
-		\parbox{\spacebox}{        % Box to align text
-		\textit{#1}}
-		\parbox{\spacebox}{			  
-		\centering{#2}}
-		\parbox{\spacebox}{
-		\centering{#3}}
-		\parbox{\spacebox}{
-		\centering{#4}} \par}
-		
-				
-\newcommand{\EducationEntry}[4]{
+\newcommand{\Entry}[4]{
 		\noindent \textbf{#1} \hfill      % Study
-		\colorbox{Black}{%
-			\parbox{6em}{%
-			\hfill\color{White}#2}} \par  % Duration
-		\noindent \textit{#3} \par        % School
-		\noindent\hangindent=1em\hangafter=0 \small #4 % Description
-		\normalsize \par}
-
-\newcommand{\AwardEntry}[4]{
-		\noindent \textbf{#1} \hfill      % Study
-		\colorbox{Black}{%
-			\parbox{3em}{%
-			\hfill\color{White}#2}} \par  % Duration
-		\noindent \textit{#3} \par        % School
+		\textsf{#2} \par                  % Duration
+		\noindent \textit{#3} \par        % School / Institution
 		  \noindent\hangindent=1em\hangafter=0 \small #4  % Description
-		\normalsize \par}
-		
-		
-\newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
-		\noindent \textbf{#1} \hfill      % Jobname
-		\colorbox{Black}{\color{White}#2} \par  % Duration
-		\noindent \textit{#3} \par              % Company
-		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
-		\normalsize \par}
+		\normalsize \par \vspace{7.5pt}}
 
-
-\newcommand{\VolunteeringEntry}[2]{      % Same as \PersonalEntry
-		\noindent\hangindent=2em\hangafter=0 % Indentation
-		\parbox{\spacebox}{        % Box to align text
-		\textit{#1}}			   % Entry name (birth, address, etc.)
-		\hspace{1.5em} #2 \par}    % Entry value	
-
+\newcommand{\SEntry}[3]{
+		\noindent \textbf{#1} \hfill      % Study
+		\textsf{#2} \par                  % Duration
+		\noindent \textit{#3} \par        % School / Institution
+		  \vspace{7.5pt}}
 					
 %Shortcuts
 \newcommand{\apostrofe}{\textquotesingle\xspace}
@@ -178,16 +113,7 @@
 \newcommand{\phone}{\raisebox{-.25\height}{\includegraphics[width=13pt]{images/phone.png}}}
 
 
-%% Custom colors
-%%% ------------------------------------------------------------
 
-\usepackage{xcolor}
-\definecolor{StrongRed}{RGB}{139,0,0}
-\definecolor{DarkRed}{RGB}{200,0,0}
-\definecolor{awesome-red}{HTML}{DC3522}
-\definecolor{awesome-skyblue}{HTML}{0395DE}
-\definecolor{gray}{HTML}{5D5D5D}
-\definecolor{lightgray}{HTML}{999999}
 
 
 %%% Custom sectioning (sectsty package)
@@ -198,6 +124,7 @@
 \makeatletter
 
 %% Modify the look of the section rule
+
 \newcommand{\setsectionrulecolor}[1]{\colorlet{secrulecolor}{#1}}
 \setsectionrulecolor{awesome-red}% default
 \xpatchcmd*{\SS@normsectionrule}% <cmd>
@@ -211,11 +138,27 @@
 	%\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
 	\sectionrule{0pt}{0pt}{-5pt}{1.7pt}} % width of section rule    
 	
-	
+
+% Customize fancyhdr header
+\fancyhf{} % sets both header and footer to nothing
+\renewcommand{\headrulewidth}{0pt}
+\chead{\crule[header-bar]{\textwidth}{0.5cm}}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+\pagestyle{fancy}
+
+\newcolumntype{L}[1]{>{\fontfamily{cmss}\selectfont \raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+
 	
 %%% Begin Document
 %%% ------------------------------------------------------------
 \begin{document}
+
+
 % you can upload a photo and include it here...
 %\begin{wrapfigure}{l}{0.5\textwidth}
 %	\vspace*{-2em}
@@ -227,33 +170,61 @@
 %
 %\sepspace
 
-\thispagestyle{plain}
-% Set your name here
-\def\name{\textcolor{StrongRed}{Antonio Ortega Jim\'enez}}
-
-\centerline{\LARGE\bf \name}
-\vspace{0.1in}
-\centerline{\textcolor{awesome-red}{\textsc{Bioinformatician}}}
-\vspace{0.15in}
+\thispagestyle{fancy}
 
 
 
-%%% Personal details
+%%% Header
 %%% ------------------------------------------------------------
-\centerline{ Spanish | K{\o}benhavn N}
-%Contact
-\centerline{\phone \hspace{2pt} +\begin{math}45\;91\;88\;48\;04\end{math}
-\hspace{2pt}
-\mail \hspace{2pt} \href{mailto:ntoniogu@gmail.com}{ntoniohu@gmail.com}}
+% Set your name here
+\def\name{\color{StrongRed}{\LARGE{\textsc{\textbf{Antonio Ortega Jiménez}}}}}
+\centerline{\name}
+\vspace{10pt}
+\centerline{
+Sigynsgade 79, K{\o}benhavn, Denmark
+|
+\href{mailto:ntoniogu@gmail.com}{ntoniohu@gmail.com}
+|
+\href{https://antortjim.github.io}{antortjim.github.io}
+}
 
-%\centerline{\phone \hspace{2pt} +\begin{math}45\;91\;88\;48\;04\end{math}}
-%\centerline{ \mail \hspace{2pt} \href{mailto:ntoniogu@gmail.com}{ntoniohu@gmail.com}}
-\vspace{3pt}
-\centerline{ \href{https://antortjim.github.io}{\large{\textbf{antortjim.github.io}}} }
-\vspace{5pt}
-\centerline{ \href{https://github.com/antortjim}{\github} \hspace{2pt}  \href{https://dk.linkedin.com/in/antortjim/en}{\linkedin} \hspace{2pt} \href{http://stackoverflow.com/cv/antortjim}{\stack} \hspace{2pt} @antortjim}
+
+%%% Profile
+%%% ------------------------------------------------------------
+\NewPart{Profile}
+
+Enthusiastic MSc. student im Bioinformatics with experience on statistical analysis and great work ethic. Great self-learner and tech nerd. Passionate about data visualization and modelling of biological problems.
 
 
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Bioinformatics and Data Science skills}
+
+\begin{itemize}
+
+\item \textbf{Programming}: R (advanced), Python, Bash, Web development, Octave.
+\item \textbf{Statistics}: Ability to develop complex models and analyse data.
+\item \textbf{Data visualization}: Flair for beautiful and interactive graphics made with ggplot2 and Shiny.
+\item \textbf{Biology}: Broad knowledge of biochemistry and cell biology processes.
+\item \textbf{Bioinformatics}: Hands-on experience of transcriptomic and structural data analysis.
+\item \textbf{Computer science}: Complete familiarity with the Linux operating system.
+\item \textbf{Reporting skills}: Strong command of Latex, Microsoft Office and Sphinx.
+\end{itemize}
+
+
+%%% Projects
+%%% ------------------------------------------------------------
+\NewPart{Experience}{}
+
+\Entry{Volunteer assistant}{Jan. 2017 - Current}{f{\o}devareBanken (The food bank)}{Assistant at both food pick up and delivery shifts around Greater Copenhagen area.}
+
+\Entry{Assistant Research Fellow}{Nov. 2014 - Jun. 2016}{CIC Cartuja - CSIC (Spain)}{Research on cyanobacterial adaptative response to nitrogen. Work led to Bachelor Thesis.}
+
+%%% Portfolio
+%%% ------------------------------------------------------------
+\NewPart{Portfolio}
+
+A listing of relevant programming projects may be found at \href{https://antortjim.github.io/portfolio/}{https://antortjim.github.io/portfolio/}.
 
 %%% Education
 %%% ------------------------------------------------------------
@@ -272,12 +243,6 @@
 \newcommand{\mscyears}{\begin{math}\boldsymbol{2016-2018}\end{math}}		
 \NewPart{Education}{}
 
-\newcolumntype{L}[1]{>{\fontfamily{cmss}\selectfont \raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-
-
-
 
 \begin{table}[!h]
 \begin{tabular}{C{50pt} R{100pt} l}
@@ -294,242 +259,59 @@
 
 
 
-% \EducationEntry{MSc. Bioinformatics}{2016-2018}{University of Copenhagen}{First year student.}
-%\sepspace
-%
-%\EducationEntry{BSc. Biochemistry}{2012-2016}{University of Seville}{\textbf{GPA}: \begin{math}3.38/4.0\end{math}. \\
-%  %\footnote{Computed as $1 + \frac{\mbox{10 based score} - 5}{5} \times 3 $}\\
-%  Honors on Statistics, Biosynthesis of Macromolecules, Human Genetics, and Bioinformatics.}
-%\sepspace
-% 
-%\EducationEntry{Health Sciences High School}{2010-2012}{I.E.S Alto Conquero}{\textbf{Average}: 9.1/10}
-
-
-
-\NewPart{Bioinformatics skills}
-
-%%R
-\newcommand{\Bioconductor}{cummeRbund · Annotation packages · ChIPseeker · topGO.}
-\newcommand{\Hadley}{ggplot2 · ggvis · dplyr.}
-\newcommand{\CRAN}{igraph · knitr · openxlsx · seqinr.}
-\newcommand{\Rlogo}{\includegraphics[width=20pt]{images/R_logo.png}}
-%%Python
-\newcommand{\Pythonlogo}{\includegraphics[width=20pt]{images/python_logo.png}}
-\newcommand{\Modules}{matplotlib · numpy · scipy · biopython · pandas · random · re · rpy2.}
-\newcommand{\OOP}{Experience on Object Oriented Programming.}
-%%Linux
-\newcommand{\Linuxlogo}{\includegraphics[width=20pt]{images/linux_logo.png}}
-\newcommand{\Utilities}{grep · awk · git · ssh · cut · tee · find · sed · wget · ln · vim · kill · ps.}
-\newcommand{\Methods}{IO redirection · wildcards and regex · pipelining · sys admin.}
-\newcommand{\Scripting}{Sun Grid Engine clusters · input parameters · parallelization.}
-\newcommand{\Binflogo}{\includegraphics[height=30pt]{images/binf_logo.jpg}}
-
-
-
-\newcommand{\Topics}{
-                    %\begin{tabular}[c]{@{}l@{}}
-                    RNA-seq · ChIP-seq · RNA-seq \textit{de novo} · gene networks · database search · %\\
-                    structure visualization and prediction · simulations.
-                    %\end{tabular}
-                    }
-\newcommand{\Software}{
-            %\begin{tabular}[c]{@{}l@{}}
-            BLAST · HMMER · MEME · Cytoscape · MACS · PeakAnalyzer · %\\
-            Tuxedo protocol · GATK · bwa · samtools · Scipio · COPASI.
-            %\end{tabular}
-            }
-\newcommand{\binflevel}{
-            %\begin{tabular}[b]{@{}c@{}}
-            Graduate %\\
-            level
-            %\end{tabular}
-            }
-
-
-% Please add the following required packages to your document preamble:
-% \usepackage{multirow}
-\begin{table}[!h]
-\begin{tabular}{C{60pt} >{\bfseries}R{90pt} L{290pt}}
-\multirow{2}{*}{\Rlogo}       & Bioconductor: &  \Bioconductor    \\
-                              & Hadley-verse: &  \Hadley          \\ 
-               Advanced       & Other: &  \CRAN            \\ 
-                              &               &                   \\ 
-\multirow{2}{*}{\Pythonlogo}  & Modules:      &  \Modules         \\
-                              &               &  \OOP             \\
-               Intermediate   &               &                   \\
-                              &               &                   \\
-\multirow{2}{*}{\Linuxlogo}   & Utilities:    &  \Utilities       \\
-                              & Methods:      &  \Methods         \\
-               Advanced       & Scripting     &  \Scripting       \\
-                              &               &                   \\
-\multirow{2}{*}{\Binflogo}    & Topics:       &  \Topics          \\
-                              &               &                   \\
-               \binflevel     & Software:     &  \Software        \\ 
-\end{tabular}
-\end{table}
-
-\NewPart{Portfolio}
-
-A listing of relevant projects in Bioinformatics carried out during my Bachelor of Science can be retrieved at \href{https://antortjim.github.io/portfolio/}{https://antortjim.github.io/portfolio/}.
-
-\NewPart{Volunteering}{}
-
-
-\AwardEntry{Assistant}{2017}{F{\o}devarebanken}{Assistant at both food pick up and delivery shifts around Greater Copenhagen area.}
-
-
 %%% Awards
 %%% ------------------------------------------------------------
-\vspace{-0.6cm}
 
 \NewPart{Awards}{}
 
-
-\newcommand{\extraordinario}{\textbf{Best Huelva province high-school record. 2012}}
-\newcommand{\junta}{Government of Andalusia}
-\newcommand{\extdesc}{The two best high school students from the province of Huelva were awarded this prize.}
-
-\AwardEntry{Best Huelva province high-school record}{2012}{\junta}{
+\Entry{Best Huelva province high-school record}{Jun. 2012}{Government of Andalusia}{
 The two best high school students from the province of Huelva were awarded this prize.}
 \sepspace
 
-%\AwardEntry{Paco Anillo Award on Mathematics representing Huelva}{2008}{Andalusian Association for Mathematical Education THALES}{A prize bestowed in every Andalusian province upon the most genuine solution proposed to one of the exercises posed at the Mathematical contest undergone in the same year.}
+\Entry{High school mathematics olympics}{Apr. 2008}{Andalusian Association for Mathematical Education THALES}{Students were asked to solve non trivial mathematical problems using logic and imagination.}
 
 
 %%% Languages
 %%% ------------------------------------------------------------
 \NewPart{Languages}
 
-
-\bgroup
-\def\arraystretch{3}%
-\begin{tabular}{@{\hspace{1em}}C{25pt} >{\bfseries}R{40pt} L{100pt}}
- \adjustimage{height=15pt, width=25pt, valign=m}{images/bandera.jpg}  & Spanish & Native \\
- \adjustimage{height=15pt, width=25pt, valign=m}{images/flag.png}       & English & Advanced
-\end{tabular} % 
-\begin{tabular}{@{\hspace{1em}}L{25pt} >{\bfseries}R{40pt} L{100pt}}
- \adjustimage{height=15pt, width=25pt, valign=m}{images/drapeau.png}   & French  & Basic     \\
- \adjustimage{height=15pt, width=25pt, valign=m}{images/dannebrog.png} & Danish  & Starting
-\end{tabular}
-\egroup
-
-%        \SkillsEntry{Spanish}{Native}
-%        \sepspace
-%        \SkillsEntry{English}{Advanced}
-%        \sepspace
-%        \SkillsEntry{French}{Basic}
-%        \sepspace
-%        \SkillsEntry{Danish}{Studying A1 level at KU}
-%        \sepspace
-
-%        \LanguagesEntry{}{\textbf{Writing}}{\textbf{Speaking}}{\textbf{Understanding}}
-%        \sepspace
-%        \LanguagesEntry{English}{C1}{C1}{C2}
-%        \sepspace
-%        \LanguagesEntry{French}{B1}{B1}{B1}
-
-
-
-
-
-		
-%%% Projects
-%%% ------------------------------------------------------------
-\NewPart{Research Projects (wet lab)}{}
-
-\EducationEntry{Characterization of \textit{sigE}\textquotesingle s promoter}{2014-2015}{CIC Cartuja - CSIC}{\begin{changemargin}{0cm}{3cm}Collaborated with Drs. Muro and Vioque's group on the characterization of the \textit{sigE} gene promoter in \textit{Nostoc PCC7120}.\end{changemargin}}
-
-\EducationEntry{Characterization of All\begin{math}\boldsymbol{1873}\end{math}}{2015-2016}{CIC Cartuja - CSIC}{Carried out my Bachelor Thesis on the heterologous expression of All1873, a hypothetical protein of unknown function from \textit{Nostoc PCC7120}, in \textit{E. coli}.}
-
-
-\NewPart{Other practical skills}
-
-
-\begin{multicols}{4}
+\begin{multicols}{2}
 
 \begin{itemize}
-\item Octave
-\item Latex
-
+\item \textbf{Spanish}: Native
+\item \textbf{English}: Proficient (C1 level)
 \end{itemize}
 
 \columnbreak
 
 \begin{itemize}
-\item HTML and CSS
-\item Sphix and Jekyll
+\item \textbf{French}: Elementary (B1)
+\item \textbf{Danish}: Beginner (taking courses at KU)
 \end{itemize}
 
-\columnbreak
-
-\begin{itemize}
-\item Machine learning
-\item Arduino
-\end{itemize}
-
-\columnbreak
-
-\begin{itemize}
-\item PCR
-\item Electrophoresis
-\end{itemize}
 \end{multicols}
 
+\thispagestyle{empty}
+	
 
-%%% Volunteering
-%%% ------------------------------------------------------------
-%\NewPart{Volunteering}
-%\VolunteeringEntry{Salón del}{High-school students were encouraged to study the Life Sciences}
-%\VolunteeringEntry{Estudiante}{through simple experimental performances.}
-
-
-  
-%%% Online learning
+%%% Independent learning
 %%% ------------------------------------------------------------
 \NewPart{Complementary education}{}
 
 
-\AwardEntry{Summer School on Bioinformatics}{2015}{Complutense University of Madrid}{}  
+\SEntry{Summer School on Bioinformatics}{July 2015}{Universidad Complutense de Madrid} 
   
-%\AwardEntry{Python Syntax Course}{2015}{Codecademy}{}
+\SEntry{Machine Learning by Andrew Ng}{July 2016}{University of Stanford at Coursera}
 
-
-\AwardEntry{Machine Learning by Andrew Ng}{2016}{University of Stanford at Coursera}{}
-
-
-
-
-
-
-%%%% Work experience
-%%%% ------------------------------------------------------------
-%\NewPart{Work experience}{}
-%
-%\EducationEntry{Job name}{2011-present}{Company Name inc., Full-time}{Job description goes here. To maintain a stylish look, try to fill this description with a few lines of text. Do the same for the other entries in this section.}
-%\sepspace
-%
-%\EducationEntry{Job name}{2010-2011}{Company Name inc., Part-time}{Job description goes here. To maintain a stylish look, try to fill this description with a few lines of text. Do the same for the other entries in this section.}
-
-
+%%% Hobbies
+%%% ------------------------------------------------------------
 \NewPart{Hobbies}
-I go to weekly sessions of strength training at USG, the University's gymnasium, because I think keeing active is really important. I actually try to move around by bike. On the other hand, I love learning languages and exchanging culture with people around me. I signed up for Danish lessons at KU in October for that reason. I think culture is what makes us human, so it is never too much!
-
-
+I go to weekly sessions of strength training at USG, the University's gymnasium, because I think keeping active is really important. I actually try to move around by bike. On the other hand, I love learning languages and exchanging culture with people around me. I signed up for Danish lessons at KU in October for that reason. I think culture is what makes us human, so it is never too much!
 
 
 
 \vfill
 \textcolor{lightgray}{Transcript of results from K{\o}benhavns Universitet}
-
-
-%\item \hyperlink{premio_extraordinario}{Best Huelva province record diploma} (Spanish)
-%\item \hyperlink{complu}{Summer School on Bioinformatics at Complutense University} (Spanish)
-%
-%\item \hyperlink{ML-Coursera}{Machine Learning by Andrew Ng Coursera Certificate (English)}
-%
-%\item \hyperlink{exp-en}{College transcript of results} (English)
-%\item \hyperlink{cae}{Certificate in Advanced English} (English)
-%\clearpage
 
 
 \input{appendix.tex}
