@@ -48,7 +48,7 @@
 \usepackage{amsmath}
 \usepackage{ctable}
 \usepackage{adjustbox} % center images with \adjustimage
-
+\usepackage{enumitem} % tune up itemize environment
 
 
 
@@ -107,6 +107,8 @@
 \newcommand{\github}{\raisebox{-.25\height}{\includegraphics[width=13pt]{images/github_grey.png}}}
 \newcommand{\stack}{\raisebox{-.25\height}{\includegraphics[width=13pt]{images/stack_1_grey.png}}}
 \newcommand{\linkedin}{\raisebox{-.25\height}{\includegraphics[width=13pt]{images/linkedin_grey.png}}}
+
+\newcommand{\link}{\raisebox{-.25\height}{\includegraphics[width=13pt]{images/link.png}}}
 
 \newcommand{\mail}{\raisebox{-.25\height}{\includegraphics[width=13pt]{images/mail_grey.png}}}
 
@@ -178,59 +180,84 @@
 %%% ------------------------------------------------------------
 % Set your name here
 \def\name{\color{StrongRed}{\LARGE{\textsc{\textbf{Antonio Ortega Jiménez}}}}}
+%\centerline{\name}
+%\vspace{10pt}
+%\centerline{
+%Sigynsgade 79, K{\o}benhavn, Denmark
+%|
+%\href{mailto:ntoniogu@gmail.com}{ntoniohu@gmail.com}
+%|
+%\href{https://antortjim.github.io}{antortjim.github.io}
+%}
+
 \centerline{\name}
-\vspace{10pt}
-\centerline{
-Sigynsgade 79, K{\o}benhavn, Denmark
-|
-\href{mailto:ntoniogu@gmail.com}{ntoniohu@gmail.com}
-|
-\href{https://antortjim.github.io}{antortjim.github.io}
-}
+
+\begin{figure}[!h]
+  \begin{minipage}[l]{0.15\textwidth}
+  \includegraphics[width = \textwidth]{images/aoj.jpg}
+ \end{minipage} %
+ \begin{minipage}[l]{0.35\textwidth}
+   
+   \begin{itemize}[leftmargin=10pt]
+     \setlength\itemsep{0.05pt}
+     \large
+     \item[] \mail \xspace \href{mailto:ntoniohu@gmail.com}{ntoniohu@gmail.com}
+     \item[] \link \xspace \href{https://antortjim.github.io}{antortjim.github.io}
+     \item[] \linkedin \xspace \href{https://www.linkedin.com/in/antortjim/en}{antortjim}
+   \end{itemize}
+ \end{minipage} %
+ \hspace{2pt}\vrule{} \hspace{2pt}
+ \begin{minipage}[r]{0.45\textwidth}
+   \large
+   Enthusiastic MSc. student in Bioinformatics with experience on statistical analysis and molecular biology. A passionate self-learner and hard-working person.
+ \end{minipage}
+\end{figure}
+
+% Set your name here
+
+
+%%% ------------------------------------------------------------
+%%% End of Header
 
 %%% Objective
 %%% ------------------------------------------------------------
 %\NewPart{Objective}
-%
+
 %Seeking the position at XXX.
 
-
-%%% Profile
 %%% ------------------------------------------------------------
-\NewPart{Profile}
-
-Enthusiastic MSc. student im Bioinformatics with experience on statistical analysis and great work ethic. Great self-learner and tech nerd. Passionate about data visualization and modelling of biological problems.
-
+%%% End of Objective
 
 %%% Skills
 %%% ------------------------------------------------------------
 \NewPart{Bioinformatics and Data Science skills}
 
 \begin{itemize}
-
 \item \textbf{Programming}: R (advanced), Python, Bash, Web development, Octave.
 \item \textbf{Statistics}: Ability to develop complex models and analyse data.
 \item \textbf{Data visualization}: Flair for beautiful and interactive graphics made with ggplot2 and Shiny.
 \item \textbf{Biology}: Broad knowledge of biochemistry and cell biology processes.
-\item \textbf{Bioinformatics}: Hands-on experience of transcriptomic and structural data analysis.
-\item \textbf{Computer science}: Complete familiarity with the Linux operating system.  Basic Arduino.
+\item \textbf{Bioinformatics}: Omics and structural data analysis experience.
+\item \textbf{Computer science}: Linux and Windows OS. Git and Arduino.
 \item \textbf{Reporting skills}: Strong command of Latex, Microsoft Office and Sphinx.
 \end{itemize}
 
+%%% ------------------------------------------------------------
+%%% End of Skills
 
-%%% Projects
+%%% Experience
 %%% ------------------------------------------------------------
 \NewPart{Experience}{}
 
-\Entry{Volunteer assistant}{Jan. 2017 - Current}{f{\o}devareBanken (The food bank)}{Assistant at both food pick up and delivery shifts around Greater Copenhagen area.}
+\Entry{Bike deliverer}{Feb. 2017 - Current}{FK Distribution - Denmark}{Delivery of newspapers and commercials.}
 
-\Entry{Assistant Research Fellow}{Nov. 2014 - Jun. 2016}{CIC Cartuja - CSIC (Spain)}{Research on cyanobacterial adaptative response to nitrogen. Work led to Bachelor Thesis.}
 
-%%% Portfolio
+\Entry{Volunteer assistant}{Jan. 2017 - Current}{f{\o}devareBanken - Denmark}{Assistant at both food pick up and delivery shifts around Greater Copenhagen area.}
+
+\Entry{Assistant Research Fellow}{Nov. 2014 - Jun. 2016}{CIC Cartuja-CSIC  - Spain}{Research on cyanobacterial adaptative response to nitrogen. Work led to Bachelor Thesis.}
+
 %%% ------------------------------------------------------------
-\NewPart{Portfolio}
-
-A listing of relevant programming projects may be found at \href{https://antortjim.github.io/portfolio/}{https://antortjim.github.io/portfolio/}.
+%%% End of Experience
 
 %%% Education
 %%% ------------------------------------------------------------
@@ -247,6 +274,8 @@ A listing of relevant programming projects may be found at \href{https://antortj
 \newcommand{\bsctitle}{\textbf{BSc. Biochemistry}}
 \newcommand{\bscyears}{\begin{math}\boldsymbol{2012-2016}\end{math}}
 \newcommand{\mscyears}{\begin{math}\boldsymbol{2016-2018}\end{math}}		
+
+
 \NewPart{Education}{}
 
 
@@ -255,7 +284,7 @@ A listing of relevant programming projects may be found at \href{https://antortj
 \begin{tabular}{C{50pt} R{100pt} l}
 \multirow{3}{*}{\kulogo}      & \msctitle                           & \mscyears     \\
                               & \textit{K{\o}benhavns Universitet}  & \small{Honors on Biological Sequence Analysis.}              \\ 
-                              & Denmark                             & \textbf{GPA}  (provisional): 12/12              \\ 
+                              & Denmark                             &     \\  % Insertar entre & y // la GPA del master
                               &                                     &               \\ 
 \multirow{4}{*}{\uslogo}      & \bsctitle                           &  \bscyears    \\
                               & \textit{Universidad de Sevilla}     &  \small{4 Honors including Bioinformatics, Genetics and Statistics.}    \\
@@ -264,7 +293,18 @@ A listing of relevant programming projects may be found at \href{https://antortj
 \end{tabular}
 \end{table}
 
+%%% ------------------------------------------------------------
+%%% End of Education
 
+
+%%% Portfolio
+%%% ------------------------------------------------------------
+\NewPart{Portfolio}
+
+A listing of relevant projects may be found at \href{https://antortjim.github.io/portfolio/}{https://antortjim.github.io/portfolio/}.
+
+%%% ------------------------------------------------------------
+%%% End of Portfolio
 
 %%% Awards
 %%% ------------------------------------------------------------
@@ -276,6 +316,9 @@ The two best high school students from the province of Huelva were awarded this 
 \sepspace
 
 \Entry{Winner at the high school mathematics olympics}{Apr. 2008}{Andalusian Association for Mathematical Education THALES}{Students were asked to solve non trivial mathematical problems using logic and imagination.}
+
+%%% ------------------------------------------------------------
+%%% End of Awards
 
 %%% Languages
 %%% ------------------------------------------------------------
@@ -292,10 +335,12 @@ The two best high school students from the province of Huelva were awarded this 
 
 \begin{itemize}
 \item \textbf{French}: Elementary (B1)
-\item \textbf{Danish}: Beginner (taking courses at KU)
+\item \textbf{Danish}: Beginner (Currently learning)
 \end{itemize}
 
 \end{multicols}
+%%% ------------------------------------------------------------
+%%% End of Languages
 
 \thispagestyle{empty}
 	
@@ -309,11 +354,16 @@ The two best high school students from the province of Huelva were awarded this 
   
 \SEntry{Machine Learning by Andrew Ng}{July 2016}{University of Stanford at Coursera}
 
+%%% ------------------------------------------------------------
+%%% End of Independent learning
+
 %%% Hobbies
 %%% ------------------------------------------------------------
 \NewPart{Hobbies}
-I go to weekly sessions of strength training at USG, the University's gymnasium, because I think keeping active is really important. I actually try to move around by bike. On the other hand, I love learning languages and exchanging culture with people around me. I signed up for Danish lessons at KU in October for that reason. I think culture is what makes us human, so it is never too much!
+I attend weekly sessions of strength training at USG, the University's sports center, because I think keeping active is really important. I love cykling around Copenhagen. In my free time I enjoy learning languages and exchanging culture with people around me. For this reason, I signed up for Danish lessons at KU. This way I am slowly getting in touch with the Danish lifestyle.
 
+%%% ------------------------------------------------------------
+%%% End of Hobbies
 
 
 \vfill
