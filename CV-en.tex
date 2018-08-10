@@ -49,7 +49,7 @@
 \usepackage{ctable}
 \usepackage{adjustbox} % center images with \adjustimage
 \usepackage{enumitem} % tune up itemize environment
-
+\usepackage{titlesec}
 
 
 \def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
@@ -84,23 +84,20 @@
 		\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
 		\par \normalsize \normalfont}
 
-\newcommand{\NewPart}[1]{\section*{
+\newcommand{\NewPart}[1]{
+\vspace{-15pt}
+\section*{
 %\uppercase
 {#1}}}
 
 
 \newcommand{\Entry}[4]{
 		\noindent \textbf{#1} \hfill      % Study
-		\textsf{#2} \par                  % Duration
+		{\color{gray}\textsf{#2}} \par                  % Duration
 		\noindent \textit{#3} \par        % School / Institution
-		  \noindent\hangindent=1em\hangafter=0 \small #4  % Description
+		  \noindent \small #4  % Description
 		\normalsize \par \vspace{7.5pt}}
 
-\newcommand{\SEntry}[3]{
-		\noindent \textbf{#1} \hfill      % Study
-		\textsf{#2} \par                  % Duration
-		\noindent \textit{#3} \par        % School / Institution
-		  \vspace{7.5pt}}
 					
 %Shortcuts
 \newcommand{\apostrofe}{\textquotesingle\xspace}
@@ -154,7 +151,6 @@
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
-
 	
 %%% Begin Document
 %%% ------------------------------------------------------------
@@ -172,10 +168,9 @@
 %
 %\sepspace
 
+
+
 \thispagestyle{fancy}
-
-
-
 %%% Header
 %%% ------------------------------------------------------------
 % Set your name here
@@ -193,132 +188,85 @@
 \centerline{\name}
 
 \begin{figure}[!h]
-  \begin{minipage}[l]{0.15\textwidth}
+  \begin{minipage}[l]{0.10\textwidth}
   \includegraphics[width = \textwidth]{images/aoj.jpg}
  \end{minipage} %
- \begin{minipage}[l]{0.35\textwidth}
+ \begin{minipage}[l]{0.28\textwidth}
    
-   \begin{itemize}[leftmargin=10pt]
+   \begin{itemize}[leftmargin=5pt]
      \setlength\itemsep{0.05pt}
-     \large
+     %\large
      \item[] \mail \xspace \href{mailto:ntoniohu@gmail.com}{ntoniohu@gmail.com}
      \item[] \link \xspace \href{https://antortjim.github.io}{antortjim.github.io}
      \item[] \linkedin \xspace \href{https://www.linkedin.com/in/antortjim/en}{antortjim}
    \end{itemize}
  \end{minipage} %
  \hspace{2pt}\vrule{} \hspace{2pt}
- \begin{minipage}[r]{0.45\textwidth}
-   \large
-   Enthusiastic MSc. student in Bioinformatics with experience on statistical analysis and molecular biology. A passionate self-learner and hard-working person.
+ \begin{minipage}[r]{0.62\textwidth}
+   %\large
+   MSc. student in Bioinformatics with experience on statistical analysis and molecular biology. A passionate self-learner, committed to apply science to provide solutions to our current challenges.
  \end{minipage}
 \end{figure}
 
-% Set your name here
 
+\begin{large}
+\begin{center}
+GNU/Linux · Bash · R · Python · Git · Javascript · Docker · Tensorflow · Pymc3 · Latex · Genomics · RNA-seq · Network theory · Population Genetics · Proteomics
+\end{center}
+\end{large}
 
-%%% ------------------------------------------------------------
-%%% End of Header
+%\NewPart{Bioinformatics and Data Science skills}
 
-%%% Objective
-%%% ------------------------------------------------------------
-%\NewPart{Objective}
-
-%Seeking the position at XXX.
-
-%%% ------------------------------------------------------------
-%%% End of Objective
-
-%%% Skills
-%%% ------------------------------------------------------------
-\NewPart{Bioinformatics and Data Science skills}
-
-\begin{itemize}
-\item \textbf{Programming}: R (advanced), Python, Bash, Web development, Octave.
-\item \textbf{Statistics}: Ability to develop complex models and analyse data.
-\item \textbf{Data visualization}: Flair for beautiful and interactive graphics made with ggplot2 and Shiny.
-\item \textbf{Biology}: Broad knowledge of biochemistry and cell biology processes.
-\item \textbf{Bioinformatics}: Omics and structural data analysis experience.
-\item \textbf{Computer science}: Linux and Windows OS. Git and Arduino.
-\item \textbf{Reporting skills}: Strong command of Latex, Microsoft Office and Sphinx.
-\end{itemize}
+%\begin{itemize}
+%\item \textbf{R}: 3 year-experience, RMarkdown, Shiny, and Bioconductor repo.
+%\item \textbf{Python}: Strong skills in statistical applications.
+%
+%\item \textbf{Statistics}: Ability to develop complex models and analyse data.
+%\item \textbf{Data visualization}: Flair for beautiful and interactive graphics made with ggplot2 and Shiny.
+%\item \textbf{Biology}: Broad knowledge of biochemistry and cell biology processes.
+%\item \textbf{Bioinformatics}: RNA-seq, ChIP-seq, Network theory.
+%\item \textbf{Computer science}: Linux and Windows OS. Git, Jekyll and Arduino.
+%\item \textbf{Reporting skills}: Advanced command of Latex, Microsoft Office and Sphinx.
+%\end{itemize}
 
 %%% ------------------------------------------------------------
 %%% End of Skills
 
+
+
 %%% Experience
 %%% ------------------------------------------------------------
-\NewPart{Experience}{}
+\NewPart{Experience}
 
-\Entry{Bike deliverer}{Feb. 2017 - Current}{FK Distribution - Denmark}{Delivery of newspapers and commercials.}
+\Entry{Student Assistant}{Jul. 2017 - Jul. 2018}{Novozymes - Denmark}{Providing support for projects and \textit{ad hoc} tasks at the Advanced Analytics department.}
 
-
-\Entry{Volunteer assistant}{Jan. 2017 - Current}{f{\o}devareBanken - Denmark}{Assistant at both food pick up and delivery shifts around Greater Copenhagen area.}
-
-\Entry{Assistant Research Fellow}{Nov. 2014 - Jun. 2016}{CIC Cartuja-CSIC  - Spain}{Research on cyanobacterial adaptative response to nitrogen. Work led to Bachelor Thesis.}
+\Entry{Assistant Research Fellow}{Nov. 2014 - Jun. 2016}{CIC Cartuja-CSIC  - Spain}{Research on cyanobacterial response to $N_2$. Tasks included basic lab protocols such as PCR and DNA electrophoresis.}
 
 %%% ------------------------------------------------------------
 %%% End of Experience
 
-%%% Education
-%%% ------------------------------------------------------------
+\NewPart{Education}
 
-\newcommand{\kulogo}{ \hspace{5pt} \includegraphics[width=30pt]{images/ku_logo.png}}
-\newcommand{\uslogo}{ \hspace{5pt} \includegraphics[width=30pt]{images/us_logo.png}}
-\newcommand{\msctitle}{%\begin{tabular}[c]{@{}c@{}}
-                       \textbf{MSc.} %\\
-                       \textbf{Bioinformatics}
-                       %\end{tabular}
-                       }
+\Entry{MSc. Bioinformatics}{2016 - 2018}{University of Copenhagen}{GPA: 10.69/12.0}
 
+\Entry{BSc. Biochemistry}{2012 - 2016}{University of Seville}{GPA: 3.38 / 4.0}
 
-\newcommand{\bsctitle}{\textbf{BSc. Biochemistry}}
-\newcommand{\bscyears}{\begin{math}\boldsymbol{2012-2016}\end{math}}
-\newcommand{\mscyears}{\begin{math}\boldsymbol{2016-2018}\end{math}}		
-
-
-\NewPart{Education}{}
-
-
-
-\begin{table}[!h]
-\begin{tabular}{C{50pt} R{100pt} l}
-\multirow{3}{*}{\kulogo}      & \msctitle                           & \mscyears     \\
-                              & \textit{K{\o}benhavns Universitet}  & \small{Honors on Biological Sequence Analysis.}              \\ 
-                              & Denmark                             &     \\  % Insertar entre & y // la GPA del master
-                              &                                     &               \\ 
-\multirow{4}{*}{\uslogo}      & \bsctitle                           &  \bscyears    \\
-                              & \textit{Universidad de Sevilla}     &  \small{4 Honors including Bioinformatics, Genetics and Statistics.}    \\
-                              & Spain                               &  \small{\textbf{GPA}: \begin{math}3.38/4.0\end{math}.} \\
-
-\end{tabular}
-\end{table}
-
-%%% ------------------------------------------------------------
-%%% End of Education
-
-
-%%% Portfolio
-%%% ------------------------------------------------------------
-\NewPart{Portfolio}
-
-A listing of relevant projects may be found at \href{https://antortjim.github.io/portfolio/}{https://antortjim.github.io/portfolio/}.
-
-%%% ------------------------------------------------------------
-%%% End of Portfolio
 
 %%% Awards
 %%% ------------------------------------------------------------
 
-\NewPart{Awards}{}
+\NewPart{Awards}
 
-\Entry{Best Huelva province high-school record}{Jun. 2012}{Government of Andalusia}{
-The two best high school students from the province of Huelva were awarded this prize.}
-\sepspace
+\Entry{Finalist at the GoneHacking Hackathon}{Mar. 2017}{Deloitte and Danish Cancer Society}{Merging the gap between cancer patients and their support network with AI.}
 
-\Entry{Winner at the high school mathematics olympics}{Apr. 2008}{Andalusian Association for Mathematical Education THALES}{Students were asked to solve non trivial mathematical problems using logic and imagination.}
+
+\Entry{Best Huelva province high-school record}{Jun. 2012}{Government of Andalusia}{The two best high school students from the province of Huelva were awarded this prize.}
+
+%\Entry{Winner at the high school mathematics olympics}{Apr. 2008}{Andalusian Association for Mathematical Education THALES}{Students were asked to solve non trivial mathematical problems using logic and imagination.}
 
 %%% ------------------------------------------------------------
 %%% End of Awards
+
 
 %%% Languages
 %%% ------------------------------------------------------------
@@ -327,48 +275,62 @@ The two best high school students from the province of Huelva were awarded this 
 \begin{multicols}{2}
 
 \begin{itemize}
-\item \textbf{Spanish}: Native
-\item \textbf{English}: Proficient (C1 level)
+\item \textbf{Spanish}: Mother tongue
+\item \textbf{English}: Full Professional Proficiency
 \end{itemize}
 
 \columnbreak
 
 \begin{itemize}
-\item \textbf{French}: Elementary (B1)
-\item \textbf{Danish}: Beginner (Currently learning)
+\item \textbf{Danish}: Passed module 4/6
+\item \textbf{French}: B1
 \end{itemize}
 
 \end{multicols}
 %%% ------------------------------------------------------------
 %%% End of Languages
 
-\thispagestyle{empty}
-	
-
-%%% Independent learning
+%%% Portfolio
 %%% ------------------------------------------------------------
-\NewPart{Complementary education}{}
+\NewPart{Portfolio}
+
+You can see a comprehensive list in my website \href{https://antortjim.github.io/portfolio/}{https://antortjim.github.io/portfolio/}.
+
+%%% ------------------------------------------------------------
+%%% End of Portfolio
 
 
-\SEntry{Summer School on Bioinformatics}{July 2015}{Universidad Complutense de Madrid} 
-  
-\SEntry{Machine Learning by Andrew Ng}{July 2016}{University of Stanford at Coursera}
+%%% Interests
+%%% ------------------------------------------------------------
+%\NewPart{Interests}
+%I attend weekly sessions of strength training at USG, the University's sports center, because I think keeping active is really important. I love exploring Copenhagen with my bike, reading and watching good movies and series from time to time.
+%I perform \textit{ad hoc} tasks as volunteer at the food bank (f{\o}devarebanken).
+
+%%% ------------------------------------------------------------
+%%% End of Interests
 
 %%% ------------------------------------------------------------
 %%% End of Independent learning
 
-%%% Hobbies
+%%% References
 %%% ------------------------------------------------------------
-\NewPart{Hobbies}
-I attend weekly sessions of strength training at USG, the University's sports center, because I think keeping active is really important. I love cykling around Copenhagen. In my free time I enjoy learning languages and exchanging culture with people around me. For this reason, I signed up for Danish lessons at KU. This way I am slowly getting in touch with the Danish lifestyle.
+%\NewPart{References}{}
+%\thispagestyle{empty}
+%
+%
+%References are available upon request.
+
 
 %%% ------------------------------------------------------------
-%%% End of Hobbies
+%%% End of References
+
+
 
 
 \vfill
-\textcolor{lightgray}{Transcript of results from K{\o}benhavns Universitet}
+\vspace{15pt}
+\noindent \textcolor{lightgray}{Transcript of results from University of Copenhagen. A is the best grade and F the worst.}\newpage
 
 
-\input{appendix.tex}
+\input{transcript.tex}
 \end{document}
